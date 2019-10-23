@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: mapperTest.InvoiceMapperTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.043 s <<< FAILURE! - in mapperTest.InvoiceMapperTest
-getInvoiceFromIDTest(mapperTest.InvoiceMapperTest)  Time elapsed: 0.009 s  <<< ERROR!
-java.lang.NullPointerException
-	at mapperTest.InvoiceMapperTest.getInvoiceFromIDTest(InvoiceMapperTest.java:22)
-
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.16 s - in mapperTest.InvoiceMapperTest

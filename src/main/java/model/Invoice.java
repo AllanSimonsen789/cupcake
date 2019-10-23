@@ -43,6 +43,9 @@ public class Invoice {
         return time;
     }
     
+        public ArrayList<OrderLine> getOrderlines() {
+        return orderlines;
+    }
     
     
 }

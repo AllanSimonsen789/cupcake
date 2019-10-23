@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="mapperTest.InvoiceMapperTest" time="0.043" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="mapperTest.InvoiceMapperTest" time="1.16" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="DK"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_231\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\allan\AppData\Local\Temp\surefire4937486699847122411\surefirebooter3907962004982910561.jar C:\Users\allan\AppData\Local\Temp\surefire4937486699847122411 2019-10-23T11-23-16_514-jvmRun1 surefire6485766465270685178tmp surefire_08055152815353595630tmp"/>
+    <property name="sun.java.command" value="C:\Users\allan\AppData\Local\Temp\surefire3233544549182842919\surefirebooter6888757793458267402.jar C:\Users\allan\AppData\Local\Temp\surefire3233544549182842919 2019-10-23T13-48-32_261-jvmRun1 surefire6309985724170143545tmp surefire_02479904131045908158tmp"/>
     <property name="test" value="mapperTest.InvoiceMapperTest"/>
     <property name="surefire.test.class.path" value="C:\Users\allan\Dropbox\CPHBUSINESS\2.semester\cupcake\cupcake\target\test-classes;C:\Users\allan\Dropbox\CPHBUSINESS\2.semester\cupcake\cupcake\target\classes;C:\Users\allan\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\allan\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\allan\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar;C:\Users\allan\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\allan\.m2\repository\javax\javaee-web-api\7.0\javaee-web-api-7.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -32,7 +32,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\allan\AppData\Local\Temp\surefire4937486699847122411\surefirebooter3907962004982910561.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\allan\AppData\Local\Temp\surefire3233544549182842919\surefirebooter6888757793458267402.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_231\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_231\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -62,12 +62,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="getInvoiceFromIDTest" classname="mapperTest.InvoiceMapperTest" time="0.009">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at mapperTest.InvoiceMapperTest.getInvoiceFromIDTest(InvoiceMapperTest.java:22)
-</error>
-    <system-out><![CDATA[Working Directory = C:\Users\allan\Dropbox\CPHBUSINESS\2.semester\cupcake\cupcake
-DBCONNECTOR:db.properties (Den angivne fil blev ikke fundet)
-]]></system-out>
-  </testcase>
+  <testcase name="getHighestIDTest" classname="mapperTest.InvoiceMapperTest" time="0.774"/>
+  <testcase name="testGetOrderWithIDSpecific" classname="mapperTest.InvoiceMapperTest" time="0.028"/>
+  <testcase name="makeInvoiceTest" classname="mapperTest.InvoiceMapperTest" time="0.049"/>
+  <testcase name="getInvoiceFromIDAll" classname="mapperTest.InvoiceMapperTest" time="0.18"/>
+  <testcase name="testGetAllOrders" classname="mapperTest.InvoiceMapperTest" time="0.075"/>
 </testsuite>
