@@ -54,7 +54,7 @@ CREATE TABLE `orderlines` (
 
 
 INSERT INTO accounts (name, phone, email, password, role, balance) VALUES ("Casper Bo Woschek", 12345678, "admin@cupcake.dk", "admin123", "Admin", 0.00);
-INSERT INTO accounts (name, phone, email, password, balance) VALUES ('Jette Pallesen', '63945273', 'mrstealyoboy@hotmail.dk', 'jegerfaktiskenmand', 0.00);
+INSERT INTO accounts (name, phone, email, password, balance) VALUES ('Jette Pallesen', '63945273', 'mrstealyoboy@hotmail.dk', 'pallevalle76', 0.00);
 INSERT INTO accounts (name, phone, email, password, balance) VALUES ('Sarah Buch', '87654321', 'buch@gmail.com', 'hardulæstminbuch', 0.00);
 INSERT INTO accounts (name, phone, email, password, balance) VALUES ('Frederik Brink', '67854321', 'dontbrink@yahoo.dk', 'minhundhedderper', 0.00);
 INSERT INTO accounts (name, phone, email, password, balance) VALUES ('Yvonne Frederiksen', '31257468', 'yfreder@hotmail.com', 'yvoerforpsyko', 69.75);
