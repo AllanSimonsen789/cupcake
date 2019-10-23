@@ -5,41 +5,21 @@
  */
 package mapperTest;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import model.Invoice;
+import model.InvoiceMapper;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
  * @author allan
  */
 public class InvoiceMapperTest {
+        private final InvoiceMapper im = new InvoiceMapper();
     
-    public InvoiceMapperTest() {
+    @Test
+    public void getInvoiceFromIDTest(){
+        Invoice invoice = im.getInvoiceFromID(1);
+        assertEquals(2, invoice.getCustomerID());
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }
