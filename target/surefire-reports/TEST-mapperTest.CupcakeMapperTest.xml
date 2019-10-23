@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="mapperTest.InvoiceMapperTest" time="1.16" tests="5" errors="0" skipped="0" failures="0">
-=======
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="mapperTest.InvoiceMapperTest" time="0" tests="1" errors="1" skipped="0" failures="0">
->>>>>>> d6673989a67350757d5b304541d3331a439482b4
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="mapperTest.CupcakeMapperTest" time="1.325" tests="1" errors="1" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -20,18 +16,11 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="os.name" value="Windows 10"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-<<<<<<< HEAD
-    <property name="user.country" value="DK"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_231\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\allan\AppData\Local\Temp\surefire3233544549182842919\surefirebooter6888757793458267402.jar C:\Users\allan\AppData\Local\Temp\surefire3233544549182842919 2019-10-23T13-48-32_261-jvmRun1 surefire6309985724170143545tmp surefire_02479904131045908158tmp"/>
-    <property name="test" value="mapperTest.InvoiceMapperTest"/>
-    <property name="surefire.test.class.path" value="C:\Users\allan\Dropbox\CPHBUSINESS\2.semester\cupcake\cupcake\target\test-classes;C:\Users\allan\Dropbox\CPHBUSINESS\2.semester\cupcake\cupcake\target\classes;C:\Users\allan\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\allan\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\allan\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar;C:\Users\allan\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\allan\.m2\repository\javax\javaee-web-api\7.0\javaee-web-api-7.0.jar;"/>
-=======
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\THOMA\AppData\Local\Temp\surefire5917740376380440754\surefirebooter7750020923324530574.jar C:\Users\THOMA\AppData\Local\Temp\surefire5917740376380440754 2019-10-23T13-19-05_712-jvmRun1 surefire9086400541552546423tmp surefire_0888137007905497200tmp"/>
+    <property name="sun.java.command" value="C:\Users\THOMA\AppData\Local\Temp\surefire6079578836178472997\surefirebooter662707580873281104.jar C:\Users\THOMA\AppData\Local\Temp\surefire6079578836178472997 2019-10-23T14-56-40_055-jvmRun1 surefire5073416601674942743tmp surefire_04342189161742821388tmp"/>
+    <property name="test" value="mapperTest.CupcakeMapperTest"/>
     <property name="surefire.test.class.path" value="C:\Users\THOMA\OneDrive\Documents\NetBeansProjects\cupcake\target\test-classes;C:\Users\THOMA\OneDrive\Documents\NetBeansProjects\cupcake\target\classes;C:\Users\THOMA\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\THOMA\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\THOMA\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar;C:\Users\THOMA\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\THOMA\.m2\repository\javax\javaee-web-api\7.0\javaee-web-api-7.0.jar;"/>
->>>>>>> d6673989a67350757d5b304541d3331a439482b4
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\THOMA"/>
     <property name="user.language" value="en"/>
@@ -43,13 +32,8 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-<<<<<<< HEAD
-    <property name="surefire.real.class.path" value="C:\Users\allan\AppData\Local\Temp\surefire3233544549182842919\surefirebooter6888757793458267402.jar"/>
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_231\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_231\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_231\jre\classes"/>
-=======
-    <property name="surefire.real.class.path" value="C:\Users\THOMA\AppData\Local\Temp\surefire5917740376380440754\surefirebooter7750020923324530574.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\THOMA\AppData\Local\Temp\surefire6079578836178472997\surefirebooter662707580873281104.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_181\jre\classes"/>
->>>>>>> d6673989a67350757d5b304541d3331a439482b4
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="1.8.0_181-b13"/>
@@ -78,22 +62,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-<<<<<<< HEAD
-  <testcase name="getHighestIDTest" classname="mapperTest.InvoiceMapperTest" time="0.774"/>
-  <testcase name="testGetOrderWithIDSpecific" classname="mapperTest.InvoiceMapperTest" time="0.028"/>
-  <testcase name="makeInvoiceTest" classname="mapperTest.InvoiceMapperTest" time="0.049"/>
-  <testcase name="getInvoiceFromIDAll" classname="mapperTest.InvoiceMapperTest" time="0.18"/>
-  <testcase name="testGetAllOrders" classname="mapperTest.InvoiceMapperTest" time="0.075"/>
-=======
-  <testcase name="getInvoiceFromIDTest" classname="mapperTest.InvoiceMapperTest" time="0">
+  <testcase name="getBottomFromIDTest" classname="mapperTest.CupcakeMapperTest" time="0.888">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at mapperTest.InvoiceMapperTest.getInvoiceFromIDTest(InvoiceMapperTest.java:22)
+	at mapperTest.CupcakeMapperTest.getBottomFromIDTest(CupcakeMapperTest.java:24)
 </error>
     <system-out><![CDATA[Working Directory = C:\Users\THOMA\OneDrive\Documents\NetBeansProjects\cupcake
-DBCONNECTOR:Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+DBCONNECTOR:Access denied for user 'root	'@'localhost' (using password: YES)
 ]]></system-out>
   </testcase>
->>>>>>> d6673989a67350757d5b304541d3331a439482b4
 </testsuite>

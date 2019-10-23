@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: mapperTest.CupcakeMapperTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.325 s <<< FAILURE! - in mapperTest.CupcakeMapperTest
+getBottomFromIDTest(mapperTest.CupcakeMapperTest)  Time elapsed: 0.888 s  <<< ERROR!
+java.lang.NullPointerException
+	at mapperTest.CupcakeMapperTest.getBottomFromIDTest(CupcakeMapperTest.java:24)
+
