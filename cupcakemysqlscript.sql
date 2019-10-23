@@ -97,4 +97,4 @@ INSERT INTO orderlines (invoiceID, topID, bottomID, qty) VALUES (5, 5, 8, 2);
 INSERT INTO orderlines (invoiceID, topID, bottomID, qty) VALUES (5, 1, 5, 1);
 
 
-SELECT * FROM Accounts;
+SELECT * FROM Bottoms;

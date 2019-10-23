@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="mapperTest.InvoiceMapperTest" time="0" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="mapperTest.CupcakeMapperTest" time="1.325" tests="1" errors="1" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,8 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\THOMA\AppData\Local\Temp\surefire5917740376380440754\surefirebooter7750020923324530574.jar C:\Users\THOMA\AppData\Local\Temp\surefire5917740376380440754 2019-10-23T13-19-05_712-jvmRun1 surefire9086400541552546423tmp surefire_0888137007905497200tmp"/>
+    <property name="sun.java.command" value="C:\Users\THOMA\AppData\Local\Temp\surefire6079578836178472997\surefirebooter662707580873281104.jar C:\Users\THOMA\AppData\Local\Temp\surefire6079578836178472997 2019-10-23T14-56-40_055-jvmRun1 surefire5073416601674942743tmp surefire_04342189161742821388tmp"/>
+    <property name="test" value="mapperTest.CupcakeMapperTest"/>
     <property name="surefire.test.class.path" value="C:\Users\THOMA\OneDrive\Documents\NetBeansProjects\cupcake\target\test-classes;C:\Users\THOMA\OneDrive\Documents\NetBeansProjects\cupcake\target\classes;C:\Users\THOMA\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\THOMA\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\THOMA\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar;C:\Users\THOMA\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\THOMA\.m2\repository\javax\javaee-web-api\7.0\javaee-web-api-7.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\THOMA"/>
@@ -31,7 +32,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\THOMA\AppData\Local\Temp\surefire5917740376380440754\surefirebooter7750020923324530574.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\THOMA\AppData\Local\Temp\surefire6079578836178472997\surefirebooter662707580873281104.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_181\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -61,14 +62,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="getInvoiceFromIDTest" classname="mapperTest.InvoiceMapperTest" time="0">
+  <testcase name="getBottomFromIDTest" classname="mapperTest.CupcakeMapperTest" time="0.888">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at mapperTest.InvoiceMapperTest.getInvoiceFromIDTest(InvoiceMapperTest.java:22)
+	at mapperTest.CupcakeMapperTest.getBottomFromIDTest(CupcakeMapperTest.java:24)
 </error>
     <system-out><![CDATA[Working Directory = C:\Users\THOMA\OneDrive\Documents\NetBeansProjects\cupcake
-DBCONNECTOR:Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+DBCONNECTOR:Access denied for user 'root	'@'localhost' (using password: YES)
 ]]></system-out>
   </testcase>
 </testsuite>
