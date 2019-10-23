@@ -9,13 +9,13 @@ package model;
  *
  * @author THOMA
  */
-class Bottom {
+public class Bottom {
     
-    int ID;
-    String name;
-    double price;
+    private int ID;
+    private String name;
+    private double price;
 
-    Bottom(int aInt, String string, double aDouble) {
+    public Bottom(int aInt, String string, double aDouble) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

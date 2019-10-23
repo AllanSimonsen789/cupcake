@@ -1,4 +1,4 @@
-package model;
+package datasource;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Account;
 import javax.security.auth.login.LoginException;
-import static model.DB.getConnection;
-import static model.DB.getConnection;
+import model.Account;
+import static datasource.DB.getConnection;
+import static datasource.DB.getConnection;
 
 /**
  *
@@ -19,7 +20,7 @@ import static model.DB.getConnection;
 public class AccountMapper implements AccountMapperInterface {
 
     @Override
-    public Account login(String email, String password) throws model.LoginException {
+    public Account login(String email, String password) throws Exceptions.LoginException {
         try {
             Connection con = getConnection();
             String SQL = "SELECT * FROM accounts "

@@ -6,8 +6,8 @@
 package mapperTest;
 
 import model.Account;
-import model.AccountMapper;
-import model.LoginException;
+import datasource.AccountMapper;
+import Exceptions.LoginException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

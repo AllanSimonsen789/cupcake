@@ -44,13 +44,15 @@ CREATE TABLE `orderlines` (
   `topID` int(11) NOT NULL,
   `bottomID` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
+  PRIMARY KEY (`invoiceID`,`topID`,`bottomID`),
   KEY `tops_ref_idx` (`topID`),
   KEY `bottoms_ref_idx` (`bottomID`),
   KEY `invoice_ref_idx` (`invoiceID`),
-  CONSTRAINT `tops_ref` FOREIGN KEY (`topID`) REFERENCES `tops` (`ID`),
   CONSTRAINT `bottoms_ref` FOREIGN KEY (`bottomID`) REFERENCES `bottoms` (`ID`),
-  CONSTRAINT `invoice_ref` FOREIGN KEY (`invoiceID`) REFERENCES `invoices` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `invoice_ref` FOREIGN KEY (`invoiceID`) REFERENCES `invoices` (`ID`),
+  CONSTRAINT `tops_ref` FOREIGN KEY (`topID`) REFERENCES `tops` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
 
 
 INSERT INTO accounts (name, phone, email, password, role, balance) VALUES ("Casper Bo Woschek", 12345678, "admin@cupcake.dk", "admin123", "Admin", 0.00);
@@ -95,6 +97,3 @@ INSERT INTO orderlines (invoiceID, topID, bottomID, qty) VALUES (3, 3, 1, 3);
 INSERT INTO orderlines (invoiceID, topID, bottomID, qty) VALUES (4, 2, 7, 1);
 INSERT INTO orderlines (invoiceID, topID, bottomID, qty) VALUES (5, 5, 8, 2);
 INSERT INTO orderlines (invoiceID, topID, bottomID, qty) VALUES (5, 1, 5, 1);
-
-
-SELECT * FROM Bottoms;

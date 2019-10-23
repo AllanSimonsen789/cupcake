@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package datasource;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,12 +11,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import model.Invoice;
+import model.OrderLine;
 
 /**
  *
  * @author allan
  */
-public class InvoiceMapper {
+public class InvoiceMapper implements InvoiceMapperInterface{
     
      public void makeInvoice(Invoice invoice) {
         String sql = "INSERT INTO cupcakes.invoices (customerID, price, time) VALUES(?, ?, ?);";
@@ -109,7 +111,7 @@ public class InvoiceMapper {
         return invoice;
     }
     
-    public ArrayList<Invoice> getAllOrders() {
+    public ArrayList<Invoice> getAllInvoices() {
         String sql = "SELECT * FROM cupcakes.invoices;";
         String sql2 = "SELECT * FROM cupcakes.orderlines WHERE invoiceID = ?;";
         ArrayList<Invoice> orderList = new ArrayList<>();

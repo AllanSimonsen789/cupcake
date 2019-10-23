@@ -8,7 +8,7 @@ package mapperTest;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import model.Invoice;
-import model.InvoiceMapper;
+import datasource.InvoiceMapper;
 import model.OrderLine;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

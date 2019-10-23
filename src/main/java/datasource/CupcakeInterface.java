@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package datasource;
 
 import java.util.ArrayList;
+import model.Bottom;
+import model.Top;
 
 /**
  *
