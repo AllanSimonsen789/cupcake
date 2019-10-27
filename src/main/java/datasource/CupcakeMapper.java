@@ -19,7 +19,7 @@ import model.Top;
  *
  * @author THOMA
  */
-public class CupcakeMapper implements CupcakeInterface {
+public class CupcakeMapper implements CupcakeMapperInterface {
 
     
     

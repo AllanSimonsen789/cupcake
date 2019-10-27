@@ -8,10 +8,8 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Account;
-import javax.security.auth.login.LoginException;
-import model.Account;
-import static datasource.DB.getConnection;
-import static datasource.DB.getConnection;
+import Exceptions.LoginException;
+
 
 /**
  *
@@ -20,11 +18,11 @@ import static datasource.DB.getConnection;
 public class AccountMapper implements AccountMapperInterface {
 
     @Override
-    public Account login(String email, String password) throws Exceptions.LoginException {
+    public Account login(String email, String password) throws LoginException {
         try {
-            Connection con = getConnection();
-            String SQL = "SELECT * FROM accounts "
-                    + "WHERE email=? AND password=?";
+            Connection con = DB.getConnection();
+            if(con != null) System.out.println("con is there");
+            String SQL = "SELECT * FROM cupcakes.accounts WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString(1, email);
             ps.setString(2, password);
@@ -55,7 +53,7 @@ public class AccountMapper implements AccountMapperInterface {
 
     @Override
     public void createAccount(Account account) {
-        String sql = "INSERT INTO accounts (name, phone, email, password, role, balance) VALUES (?,?,?,?,?,0.00)";
+        String sql = "INSERT INTO cupcakes.accounts (name, phone, email, password, role, balance) VALUES (?,?,?,?,?,0.00)";
         try {
 
             Connection conn = DB.getConnection();

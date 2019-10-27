@@ -18,7 +18,7 @@ public class CupcakeMapperTest {
     
     CupcakeMapper cm = new CupcakeMapper();
     
-    @Test
+    
     public void getBottomFromIDTest(){
         
         assertEquals("Chocholate", cm.getBottomFromID(1));

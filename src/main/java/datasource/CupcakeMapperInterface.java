@@ -13,7 +13,7 @@ import model.Top;
  *
  * @author THOMA
  */
-interface CupcakeInterface {
+public interface CupcakeMapperInterface {
     
     
     

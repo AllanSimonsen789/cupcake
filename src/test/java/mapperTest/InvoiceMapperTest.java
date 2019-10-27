@@ -61,8 +61,8 @@ public class InvoiceMapperTest {
     }
 
     @Test
-    public void testGetAllOrders() {
-        ArrayList<Invoice> invoiceList = im.getAllOrders();
+    public void testGetAllInvoices() {
+        ArrayList<Invoice> invoiceList = im.getAllInvoices();
         assertEquals(im.getHighestID(), invoiceList.size());
         for (int i = 0; i < invoiceList.size(); i++) {
             Invoice invoice = invoiceList.get(i);
