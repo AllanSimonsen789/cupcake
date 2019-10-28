@@ -16,7 +16,7 @@ public interface AccountMapperInterface {
     
     public Account login(String email, String password) throws LoginException;
     
-    public void createAccount(Account account);
+    public void createAccount(Account account)throws LoginException;
     
     public Account getAccount(int id);
     

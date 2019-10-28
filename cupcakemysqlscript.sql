@@ -8,7 +8,7 @@ CREATE TABLE `accounts` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `phone` int(8) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL unique,
   `password` varchar(20) NOT NULL,
   `role` varchar(10) NOT NULL DEFAULT "customer",
   `balance` double,
@@ -51,12 +51,12 @@ CREATE TABLE `orderlines` (
   CONSTRAINT `bottoms_ref` FOREIGN KEY (`bottomID`) REFERENCES `bottoms` (`ID`),
   CONSTRAINT `invoice_ref` FOREIGN KEY (`invoiceID`) REFERENCES `invoices` (`ID`),
   CONSTRAINT `tops_ref` FOREIGN KEY (`topID`) REFERENCES `tops` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 
 INSERT INTO accounts (name, phone, email, password, role, balance) VALUES ("Casper Bo Woschek", 12345678, "admin@cupcake.dk", "admin123", "Admin", 0.00);
-INSERT INTO accounts (name, phone, email, password, balance) VALUES ('Jette Pallesen', '63945273', 'mrstealyoboy@hotmail.dk', 'pallevalle76', 0.00);
+INSERT INTO accounts (name, phone, email, password, balance) VALUES ('Tine Marbjerg', '87654321', 'tm@cph.dk', 'tm123', 42.0);
 INSERT INTO accounts (name, phone, email, password, balance) VALUES ('Sarah Buch', '87654321', 'buch@gmail.com', 'hardulæstminbuch', 0.00);
 INSERT INTO accounts (name, phone, email, password, balance) VALUES ('Frederik Brink', '67854321', 'dontbrink@yahoo.dk', 'minhundhedderper', 0.00);
 INSERT INTO accounts (name, phone, email, password, balance) VALUES ('Yvonne Frederiksen', '31257468', 'yfreder@hotmail.com', 'Yver321', 69.75);
@@ -97,3 +97,5 @@ INSERT INTO orderlines (invoiceID, topID, bottomID, qty) VALUES (3, 3, 1, 3);
 INSERT INTO orderlines (invoiceID, topID, bottomID, qty) VALUES (4, 2, 7, 1);
 INSERT INTO orderlines (invoiceID, topID, bottomID, qty) VALUES (5, 5, 8, 2);
 INSERT INTO orderlines (invoiceID, topID, bottomID, qty) VALUES (5, 1, 5, 1);
+
+select * from accounts;

@@ -44,7 +44,7 @@ public class AccountMapperTest {
     }
     
     @Test
-    public void createAccountTest() {
+    public void createAccountTest() throws LoginException {
         Account account = new Account("Arthur Fleck", 66666666, "joker@hotmail.com", "wanttohearajoke+", "customer", 0.00);
         am.createAccount(account);
         assertEquals(11, am.getHighestAccountID());

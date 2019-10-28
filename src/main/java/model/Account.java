@@ -88,6 +88,11 @@ public class Account {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" + "ID=" + ID + ", name=" + name + ", phone=" + phone + ", email=" + email + ", password=" + password + ", role=" + role + ", balance=" + balance + '}';
+    }
     
     
 }

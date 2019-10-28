@@ -26,10 +26,10 @@
                     <form name="login" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="login">
                         Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
+                        <input type="text" name="email" placeholder="someone@nowhere.com">
                         <br>
                         Password:<br>
-                        <input type="password" name="password" value="sesam">
+                        <input type="password" name="password">
                         <br>
                         <input type="submit" value="Submit">
                     </form>
@@ -38,14 +38,20 @@
                 <td>
                     <form name="register" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="register">
+                        Navn:<br>
+                        <input type="text" name="name" placeholder="Navn">
+                        <br>
+                        Telefon:<br>
+                        <input type="number" name="phone" placeholder="Telefon nummer" min="11111111" max="99999999">
+                        <br>
                         Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
+                        <input type="email" name="email" placeholder="someone@nowhere.com">
                         <br>
                         Password:<br>
-                        <input type="password" name="password1" value="sesam">
+                        <input type="password" name="password1">
                         <br>
                         Retype Password:<br>
-                        <input type="password" name="password2" value="sesam">
+                        <input type="password" name="password2" >
                         <br>
                         <input type="submit" value="Submit">
                     </form>

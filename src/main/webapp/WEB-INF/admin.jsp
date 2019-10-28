@@ -4,6 +4,7 @@
     Author     : allan
 --%>
 
+<%@page import="model.Account"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,5 +14,6 @@
     </head>
     <body>
         <h1>ADMIN!</h1>
+        <h2><%=((Account)session.getAttribute("account")).getName() %></h2>
     </body>
 </html>

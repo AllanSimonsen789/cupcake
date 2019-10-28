@@ -21,7 +21,6 @@ public class AccountMapper implements AccountMapperInterface {
     public Account login(String email, String password) throws LoginException {
         try {
             Connection con = DB.getConnection();
-            if(con != null) System.out.println("con is there");
             String SQL = "SELECT * FROM cupcakes.accounts WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString(1, email);
@@ -33,8 +32,10 @@ public class AccountMapper implements AccountMapperInterface {
                 int phone = res.getInt("phone");
                 String role = res.getString("role");
                 double balance = res.getInt("balance");
-                Account user = new Account(name, phone, email, password, role, balance);
-                user.setID(id);
+                Account user = new Account(id, name, phone, email, password, role, balance);
+                if(user == null){
+                    System.out.println("null in accountmapper");
+                }
                 return user;
             } else {
                 throw new LoginException("Could not validate user.");
@@ -52,7 +53,7 @@ public class AccountMapper implements AccountMapperInterface {
     }
 
     @Override
-    public void createAccount(Account account) {
+    public void createAccount(Account account) throws LoginException{
         String sql = "INSERT INTO cupcakes.accounts (name, phone, email, password, role, balance) VALUES (?,?,?,?,?,0.00)";
         try {
 
@@ -70,7 +71,11 @@ public class AccountMapper implements AccountMapperInterface {
             account.setID(id);            
 
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            if(ex.getErrorCode() == 1062){
+                throw new LoginException("Der findes allerede en bruger med denne email addresse");
+            }else{
+                System.out.println(ex.getMessage());
+            }
         }
 
     }
