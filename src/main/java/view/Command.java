@@ -24,7 +24,9 @@ public abstract class Command {
     private static void initCommands() {
         commandList = new HashMap<>();
         commandList.put("login", new LoginCommand());
-        commandList.put( "register", new RegisterCommand() );
+        commandList.put("register", new RegisterCommand());
+        commandList.put("RegisterPage", new RegisterPageCommand());
+        commandList.put("LoginPage", new LoginPageCommand());
     }
 
     static Command from(HttpServletRequest request) {
