@@ -32,7 +32,9 @@ public class LoginCommand extends Command {
                 if (account.getRole().equals("Admin")) {
                     return "admin";
                 }else if (account.getRole().equals("customer")) {
-                    return "shop";
+                    request.setAttribute("tops", controller.getAllTops());
+                    request.setAttribute("bottoms", controller.getAllBottoms());
+                    return "products";
                 }
             } else {
                 throw new LoginException("Email eller kodeord var forkert, prøv igen");

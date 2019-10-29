@@ -30,6 +30,8 @@ public class RegisterCommand extends Command {
                 if (account.getRole().equals("Admin")) {
                     return "admin";
                 } else if (account.getRole().equals("customer")) {
+                    request.setAttribute("tops", controller.getAllTops());
+                    request.setAttribute("bottoms", controller.getAllBottoms());
                     return "shop";
                 }
             } else {

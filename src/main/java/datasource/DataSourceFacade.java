@@ -6,7 +6,10 @@
 package datasource;
 
 import Exceptions.LoginException;
+import java.util.ArrayList;
 import model.Account;
+import model.Bottom;
+import model.Top;
 
 /**
  *
@@ -27,6 +30,16 @@ public class DataSourceFacade implements DataSourceFacadeInterface {
     public Account register(Account account) throws LoginException {
         am.createAccount(account);
         return am.getAccount(am.getHighestAccountID());
+    }
+    
+    @Override
+    public ArrayList<Top> getAllTops(){
+        return cm.getTops();
+    }
+    
+    @Override
+    public ArrayList<Bottom> getAllBottoms(){
+        return cm.getBottoms();
     }
 
 }

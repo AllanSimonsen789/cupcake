@@ -6,9 +6,13 @@
 package controller;
 
 import Exceptions.LoginException;
+import Exceptions.ShopException;
 import datasource.DataSourceFacade;
 import datasource.DataSourceFacadeInterface;
+import java.util.ArrayList;
 import model.Account;
+import model.Bottom;
+import model.Top;
 
 /**
  *
@@ -25,5 +29,13 @@ public class Controller {
     }
     public Account register(String name, String phone, String email, String password)throws LoginException{
         return DSfacade.register(new Account(name, Integer.parseInt(phone), email, password, "customer" ,0.00));
+    }
+    
+    public ArrayList<Top> getAllTops() {
+        return DSfacade.getAllTops();
+    }
+    
+    public ArrayList<Bottom> getAllBottoms() {
+        return DSfacade.getAllBottoms();
     }
 }

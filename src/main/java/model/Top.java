@@ -15,11 +15,11 @@ public class Top {
     private String name;
     private double price;
 
-    public Top(int aInt, String string, double aDouble) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Top(int ID, String name, double price) {
+        this.ID = ID;
+        this.name = name;
+        this.price = price;
     }
-
-    
 
     public int getID() {
         return ID;
