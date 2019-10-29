@@ -7,6 +7,7 @@ package mapperTest;
 
 
 import datasource.CupcakeMapper;
+import model.Bottom;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -15,13 +16,12 @@ import static org.junit.Assert.*;
  * @author THOMA
  */
 public class CupcakeMapperTest {
+        private final datasource.CupcakeMapper cm = new CupcakeMapper();
     
-    CupcakeMapper cm = new CupcakeMapper();
-    
-    
+    @Test
     public void getBottomFromIDTest(){
-        
-        assertEquals("Chocholate", cm.getBottomFromID(1));
+        Bottom bottom = cm.getBottomFromID(1);
+        assertEquals("Chocolate", bottom.getName());
     }
 
 }

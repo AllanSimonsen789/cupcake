@@ -27,8 +27,6 @@ public class CupcakeMapper implements CupcakeMapperInterface {
     @Override
     public Bottom getBottomFromID(int ID) {
         
-        
-        
         String sql = "SELECT * FROM cupcakes.bottoms WHERE ID = ?;";
         
         Bottom bottom = null;
@@ -47,7 +45,7 @@ public class CupcakeMapper implements CupcakeMapperInterface {
                 bottom = new Bottom(res.getInt("ID"), res.getString("name"), res.getDouble("price"));
             }
                     
-                    } catch (SQLException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(CupcakeMapper.class.getName()).log(Level.SEVERE, null, ex);
         }
         
