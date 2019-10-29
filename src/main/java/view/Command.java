@@ -27,6 +27,7 @@ public abstract class Command {
         commandList.put("register", new RegisterCommand());
         commandList.put("RegisterPage", new RegisterPageCommand());
         commandList.put("LoginPage", new LoginPageCommand());
+        commandList.put("addproduct", new AddProductCommand());
     }
 
     static Command from(HttpServletRequest request) {

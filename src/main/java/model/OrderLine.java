@@ -22,6 +22,12 @@ public class OrderLine {
         this.qty = qty;
     }
 
+    public OrderLine(int topID, int bottomID, int qty) {
+        this.topID = topID;
+        this.bottomID = bottomID;
+        this.qty = qty;
+    }
+
     public int getInvoiceID() {
         return invoiceID;
     }
