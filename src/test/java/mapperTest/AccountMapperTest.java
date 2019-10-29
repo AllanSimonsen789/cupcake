@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
 // Re-run SQL script before testing!
 // Re-run SQL script before testing!
 public class AccountMapperTest {
-        private final AccountMapper am = new AccountMapper();
+        private final datasource.AccountMapper am = new AccountMapper();
     
     @Test
     public void getAccountTest() {
@@ -45,7 +45,7 @@ public class AccountMapperTest {
     
     @Test
     public void createAccountTest() throws LoginException {
-        Account account = new Account("Arthur Fleck", 66666666, "joker@hotmail.com", "wanttohearajoke+", "customer", 0.00);
+        model.Account account = new Account("Arthur Fleck", 66666666, "joker@hotmail.com", "wanttohearajoke+", "customer", 0.00);
         am.createAccount(account);
         assertEquals(11, am.getHighestAccountID());
     }
