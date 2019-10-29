@@ -16,8 +16,9 @@ import static org.junit.Assert.*;
  * @author THOMA
  */
 public class CupcakeMapperTest {
+
         private final CupcakeMapper cm = new CupcakeMapper();
-    
+
     @Test
     public void getBottomFromIDTest(){
         Bottom bottom = cm.getBottomFromID(1);
