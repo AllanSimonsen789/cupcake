@@ -6,13 +6,16 @@
 
 <%@page import="model.Account"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% Account account = (Account) session.getAttribute("account");%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer Page</title>
+        <title>My Profile</title>
     </head>
     <body>
-        <h1>This is your incredible page!</h1>
+        <h1>Hello <%=account.getName()%>, this is your incredible profile!</h1>
+        <h3>Balance: <%= account.getBalance()%></h3>
+        
     </body>
 </html>

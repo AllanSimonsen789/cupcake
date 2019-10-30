@@ -26,8 +26,9 @@
     <body>
         <h1>Shopping Cart</h1>
         <h2>Welcome <%=account.getName()%></h2>
-        <h3>Balance: <%= account.getBalance()%></h3>
+        <p>Balance: <%= account.getBalance()%></p>
         <h3>Your shopping cart:</h3>
+        <% if (orderlines != null) { %>
         <br>
         <table style="float: left">
             <tr>
@@ -40,8 +41,8 @@
                 double sum = 0;
                 double totalSum = 0;
                 for (OrderLine orderline : orderlines) {
-                    Bottom bottom = bottoms.get(orderline.getBottomID()-1);
-                    Top top = tops.get(orderline.getTopID()-1);
+                    Bottom bottom = bottoms.get(orderline.getBottomID() - 1);
+                    Top top = tops.get(orderline.getTopID() - 1);
                     sum = ((bottom.getPrice() + top.getPrice()) * orderline.getQty());
                     totalSum = sum + totalSum;
             %>        
@@ -51,8 +52,19 @@
                 <td><%=orderline.getQty()%></td>
                 <td><%=sum%></td>                
             </tr>
-            <% }%>            
+            <% }%>
         </table>
         <h3>Total price: <%=totalSum%></h3>
+        <% } else {%>
+        <p>Your cart is empty!</p>
+        <% }%>
+        <form name="ProductPage" action="FrontController" method="POST">
+            <input type="hidden" value="ProductPage" name="command" />
+            <input type="submit" value="Add Cupcakes" name="productpage" />
+        </form><br>
+        <form name="InvoicePage" action="FrontController" method="POST">
+            <input type="hidden" value="InvoicePage" name="command" />
+            <input type="submit" value="Place Order" name="invoicepage" />
+        </form>
     </body>
 </html>
