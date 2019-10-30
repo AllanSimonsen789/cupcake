@@ -7,7 +7,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Invoice"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% ArrayList<Invoice> invoices = (ArrayList<Invoice>) request.getAttribute("invoices");%>
+<%Invoice invoice = (Invoice)request.getAttribute("invoice");%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,18 +19,22 @@
         <div>
             <table style="float: left">
                 <thead>
-                    <th>#ID</th>
-                    <th>Name</th>
-                    <th>Bottom</th>
-                    <th>Top</th>
-                    <th>Quantity</th>
-                    <th>Ordered</th>
-                    <th>Price</th>
+                <th>#ID: </th>
+                <th>Name: </th>
+                <th>Bottom: </th>
+                <th>Top: </th>
+                <th>Quantity:</th>
+                <th>Ordered</th>
+                <th>Price</th>
                     <%
-                        
+
                     %>
-                    <tr>
+                <tr>
             </table>
         </div>
+        <form name="CustomerPage" action="FrontController">
+            <input type="hidden" value="CustomerPage"  name="command"/>
+            <input type="submit" value="Back to Profile"  name="profile"/>
+        </form>
     </body>
 </html>

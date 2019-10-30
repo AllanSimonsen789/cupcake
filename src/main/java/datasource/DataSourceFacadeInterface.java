@@ -31,4 +31,8 @@ public interface DataSourceFacadeInterface {
     public ArrayList<Account> getAllAccounts();
 
     public void addFunds(int accountid, int funds);
+
+    public ArrayList<Invoice> getInvoiceWithCustomerID(int customerID);
+
+    public Invoice getAllInvoiceWithID(int invoiceid);
 }

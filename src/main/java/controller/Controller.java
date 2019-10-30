@@ -51,4 +51,12 @@ public class Controller {
     public void addFunds(int accountid, int funds) {
         DSfacade.addFunds(accountid, funds);
     }
+
+    public ArrayList<Invoice> getInvoicesWithCustomerID(int customerID) {
+        return DSfacade.getInvoiceWithCustomerID(customerID);
+    }
+
+    public Invoice getInvoiceFromId(int invoiceid) {
+        return DSfacade.getAllInvoiceWithID(invoiceid);
+    }
 }

@@ -18,9 +18,9 @@ import model.OrderLine;
  *
  * @author allan
  */
-public class InvoiceMapper implements InvoiceMapperInterface{
-    
-     public void makeInvoice(Invoice invoice) {
+public class InvoiceMapper implements InvoiceMapperInterface {
+
+    public void makeInvoice(Invoice invoice) {
         String sql = "INSERT INTO cupcakes.invoices (customerID, price, time) VALUES(?, ?, ?);";
         String sqlordreline = "INSERT INTO cupcakes.orderLines VALUES(?,?,?,?);";
         try {
@@ -49,9 +49,9 @@ public class InvoiceMapper implements InvoiceMapperInterface{
         }
 
     }
-    
-    public int getHighestID(){
-                String sql = "SELECT * FROM cupcakes.invoices ORDER BY ID DESC LIMIT 0, 1";
+
+    public int getHighestID() {
+        String sql = "SELECT * FROM cupcakes.invoices ORDER BY ID DESC LIMIT 0, 1";
         int returnInt = 0;
         try {
 
@@ -72,8 +72,8 @@ public class InvoiceMapper implements InvoiceMapperInterface{
         }
         return returnInt;
     }
-    
-    public Invoice getInvoiceFromID(int id){
+
+    public Invoice getInvoiceFromID(int id) {
         String sql = "SELECT * FROM cupcakes.invoices WHERE ID = ?;";
         String sql2 = "SELECT * FROM cupcakes.orderlines WHERE invoiceID = ?;";
         Invoice invoice = null;
@@ -98,10 +98,10 @@ public class InvoiceMapper implements InvoiceMapperInterface{
                     ordreLines = null;
                 } else {
                     while (res2.next()) {
-                        ordreLines.add(new OrderLine(res2.getInt(1),res2.getInt(2),res2.getInt(3),res2.getInt(4)));
+                        ordreLines.add(new OrderLine(res2.getInt(1), res2.getInt(2), res2.getInt(3), res2.getInt(4)));
                     }
                 }
-                invoice = new Invoice(res.getInt("ID"),res.getInt("customerID") ,res.getDouble("price"), res.getTimestamp("time"), ordreLines);
+                invoice = new Invoice(res.getInt("ID"), res.getInt("customerID"), res.getDouble("price"), res.getTimestamp("time"), ordreLines);
             }
         } catch (SQLException ex) {
             System.out.println("Invoicemapper - getinvoicefromID" + ex.getMessage());
@@ -110,7 +110,7 @@ public class InvoiceMapper implements InvoiceMapperInterface{
 
         return invoice;
     }
-    
+
     public ArrayList<Invoice> getAllInvoices() {
         String sql = "SELECT * FROM cupcakes.invoices;";
         String sql2 = "SELECT * FROM cupcakes.orderlines WHERE invoiceID = ?;";
@@ -137,21 +137,60 @@ public class InvoiceMapper implements InvoiceMapperInterface{
                         ordreLines = null;
                     } else {
                         while (res2.next()) {
-                            ordreLines.add(new OrderLine(res2.getInt(1),res2.getInt(2),res2.getInt(3),res2.getInt(4)));
+                            ordreLines.add(new OrderLine(res2.getInt(1), res2.getInt(2), res2.getInt(3), res2.getInt(4)));
                         }
                     }
-                    orderList.add(new Invoice(res.getInt(1),res.getInt(2),res.getDouble(3),res.getTimestamp(4), ordreLines));
+                    orderList.add(new Invoice(res.getInt(1), res.getInt(2), res.getDouble(3), res.getTimestamp(4), ordreLines));
                 }
             }
         } catch (SQLException ex) {
             System.out.println("InvoiceMapper - getAllOrders" + ex.getMessage());
 
         }
-        
+
         return orderList;
     }
-    
-    
-    
-    
+
+    @Override
+    public ArrayList<Invoice> getInvoicesWithCustomerID(int customerID) {
+        String sql = "SELECT * FROM invoices WHERE customerID = ?;";
+        String sql2 = "SELECT * FROM cupcakes.orderlines WHERE invoiceID = ?;";
+        ArrayList<Invoice> orderList = new ArrayList<>();
+        try {
+
+            Connection conn = DB.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, customerID);
+            ResultSet res = pstmt.executeQuery();
+
+            if (res == null) {
+
+                return null;
+            } else {
+                //get tops
+                //get bottoms
+                while (res.next()) {
+                    Connection conn2 = DB.getConnection();
+                    PreparedStatement pstmt2 = conn2.prepareStatement(sql2);
+                    pstmt2.setString(1, "" + res.getInt("ID"));
+                    ResultSet res2 = pstmt2.executeQuery();
+                    ArrayList<OrderLine> ordreLines = new ArrayList<>();
+                    if (res2 == null) {
+                        ordreLines = null;
+                    } else {
+                        while (res2.next()) {
+                            ordreLines.add(new OrderLine(res2.getInt(1), res2.getInt(2), res2.getInt(3), res2.getInt(4)));
+                        }
+                    }
+                    orderList.add(new Invoice(res.getInt(1), res.getInt(2), res.getDouble(3), res.getTimestamp(4), ordreLines));
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println("InvoiceMapper - getAllOrders" + ex.getMessage());
+
+        }
+
+        return orderList;
+    }
+
 }

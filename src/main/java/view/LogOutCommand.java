@@ -1,21 +1,25 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package view;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.Account;
 
 /**
  *
- * @author Malthe
+ * @author allan
  */
-public class CustomerPageCommand extends Command {
+public class LogOutCommand extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
-        request.setAttribute("invoices", controller.getInvoicesWithCustomerID(((Account)session.getAttribute("account")).getID()));
-        return "customer";
+        session.invalidate();
+        return "index";
     }
-    
+
 }

@@ -34,7 +34,11 @@ public class FrontController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         Command cmd = Command.from(request);
         String view = cmd.execute(request, response);
-        request.getRequestDispatcher("/WEB-INF/" + view + ".jsp").forward(request, response);
+        if(!view.equals("index")){
+            request.getRequestDispatcher("/WEB-INF/" + view + ".jsp").forward(request, response);
+        }else{
+            request.getRequestDispatcher(view + ".jsp").forward(request, response);
+        }
 
         
     } 
