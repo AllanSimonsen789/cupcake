@@ -25,7 +25,19 @@ public class AddProductCommand extends Command {
         if (session.getAttribute("shoppingcart") != null) {
             shoppingCart = (ArrayList<OrderLine>) session.getAttribute("shoppingcart");
         }
-        shoppingCart.add(new OrderLine(Integer.parseInt(request.getParameter("bottom")), Integer.parseInt(request.getParameter("top")), Integer.parseInt(request.getParameter("qty"))));
+        int bottom = Integer.parseInt(request.getParameter("bottom"));
+        int top = Integer.parseInt(request.getParameter("top"));
+        int qty = Integer.parseInt(request.getParameter("qty"));
+        boolean duplicate = false;
+        for (OrderLine orderline : shoppingCart) {
+            if (orderline.getBottomID() == bottom && orderline.getTopID() == top) {
+                orderline.setQty(orderline.getQty() + qty);
+                duplicate = true;
+            }
+        }
+        if (!duplicate) {
+            shoppingCart.add(new OrderLine(bottom, top, qty));
+        }
         session.setAttribute("shoppingcart", shoppingCart);
         request.setAttribute("tops", controller.getAllTops());
         request.setAttribute("bottoms", controller.getAllBottoms());

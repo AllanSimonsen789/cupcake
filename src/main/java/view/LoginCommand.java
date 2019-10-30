@@ -30,6 +30,8 @@ public class LoginCommand extends Command {
                 System.out.println(account.toString());
                 session.setAttribute("role", account.getRole());
                 if (account.getRole().equals("Admin")) {
+                    request.setAttribute("invoices", controller.getAllInvoices());
+                    request.setAttribute("customers", controller.getAllAccounts());
                     return "admin";
                 }else if (account.getRole().equals("customer")) {
                     request.setAttribute("tops", controller.getAllTops());

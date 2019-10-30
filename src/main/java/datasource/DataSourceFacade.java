@@ -9,6 +9,7 @@ import Exceptions.LoginException;
 import java.util.ArrayList;
 import model.Account;
 import model.Bottom;
+import model.Invoice;
 import model.Top;
 
 /**
@@ -42,4 +43,18 @@ public class DataSourceFacade implements DataSourceFacadeInterface {
         return cm.getBottoms();
     }
 
+    @Override
+    public ArrayList<Invoice> getAllInvoices() {
+        return im.getAllInvoices();
+    }
+
+    @Override
+    public ArrayList<Account> getAllAccounts(){
+        return am.getAllAccounts();
+    }
+
+    @Override
+    public void addFunds(int accountid, int funds) {
+        am.addFunds(accountid, funds);
+    }
 }

@@ -9,6 +9,7 @@ import Exceptions.LoginException;
 import java.util.ArrayList;
 import model.Account;
 import model.Bottom;
+import model.Invoice;
 import model.Top;
 
 /**
@@ -24,4 +25,10 @@ public interface DataSourceFacadeInterface {
     public ArrayList<Top> getAllTops();
     
     public ArrayList<Bottom> getAllBottoms();
+
+    public ArrayList<Invoice> getAllInvoices();
+    
+    public ArrayList<Account> getAllAccounts();
+
+    public void addFunds(int accountid, int funds);
 }

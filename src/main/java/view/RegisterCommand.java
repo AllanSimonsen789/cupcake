@@ -40,7 +40,7 @@ public class RegisterCommand extends Command {
         } catch (LoginException ex) {
             request.setAttribute("error", ex.getMessage());
         }
-        return "login";
+        return "register";
 
     }
 

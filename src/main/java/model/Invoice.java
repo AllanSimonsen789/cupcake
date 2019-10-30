@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @author allan
  */
 public class Invoice {
+
     private int ID;
     private int CustomerID;
     private double price;
@@ -42,10 +43,9 @@ public class Invoice {
     public Timestamp getTime() {
         return time;
     }
-    
-        public ArrayList<OrderLine> getOrderlines() {
+
+    public ArrayList<OrderLine> getOrderlines() {
         return orderlines;
     }
-    
-    
+
 }

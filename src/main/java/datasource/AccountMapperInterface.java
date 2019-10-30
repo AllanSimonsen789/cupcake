@@ -7,6 +7,7 @@ package datasource;
 
 import model.Account;
 import Exceptions.LoginException;
+import java.util.ArrayList;
 
 /**
  *
@@ -21,5 +22,9 @@ public interface AccountMapperInterface {
     public Account getAccount(int id);
     
     public int getHighestAccountID();
+    
+    public ArrayList<Account> getAllAccounts();
+
+    public void addFunds(int accountid, int funds);
        
 }

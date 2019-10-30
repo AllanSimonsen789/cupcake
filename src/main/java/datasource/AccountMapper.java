@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Account;
 import Exceptions.LoginException;
-
+import java.util.ArrayList;
 
 /**
  *
@@ -33,7 +33,7 @@ public class AccountMapper implements AccountMapperInterface {
                 String role = res.getString("role");
                 double balance = res.getInt("balance");
                 Account user = new Account(id, name, phone, email, password, role, balance);
-                if(user == null){
+                if (user == null) {
                     System.out.println("null in accountmapper");
                 }
                 return user;
@@ -53,7 +53,7 @@ public class AccountMapper implements AccountMapperInterface {
     }
 
     @Override
-    public void createAccount(Account account) throws LoginException{
+    public void createAccount(Account account) throws LoginException {
         String sql = "INSERT INTO cupcakes.accounts (name, phone, email, password, role, balance) VALUES (?,?,?,?,?,0.00)";
         try {
 
@@ -68,12 +68,12 @@ public class AccountMapper implements AccountMapperInterface {
             ResultSet ids = pstmt.getGeneratedKeys();
             ids.next();
             int id = ids.getInt(1);
-            account.setID(id);            
+            account.setID(id);
 
         } catch (SQLException ex) {
-            if(ex.getErrorCode() == 1062){
+            if (ex.getErrorCode() == 1062) {
                 throw new LoginException("Der findes allerede en bruger med denne email addresse");
-            }else{
+            } else {
                 System.out.println(ex.getMessage());
             }
         }
@@ -103,10 +103,35 @@ public class AccountMapper implements AccountMapperInterface {
         }
         return account;
     }
-    
+
     @Override
-    public int getHighestAccountID(){
-                String sql = "SELECT * FROM cupcakes.accounts ORDER BY ID DESC LIMIT 0, 1";
+    public ArrayList<Account> getAllAccounts() {
+        String sql = "SELECT * FROM accounts WHERE role = ? ;";
+        ArrayList<Account> accountlist = new ArrayList<>();
+
+        try {
+            Connection conn = DB.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, "customer");
+            ResultSet res = pstmt.executeQuery();
+
+            if (res == null) {
+
+                return null;
+            } else {
+                while (res.next()) {
+                    accountlist.add(new Account(res.getInt("ID"), res.getString("name"), res.getInt("phone"), res.getString("email"), res.getString("password"), res.getString("role"), res.getDouble("balance")));
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println("AccountMapper - getAllAccounts" + ex.getMessage());
+        }
+        return accountlist;
+    }
+
+    @Override
+    public int getHighestAccountID() {
+        String sql = "SELECT * FROM cupcakes.accounts ORDER BY ID DESC LIMIT 0, 1";
         int returnInt = 0;
         try {
 
@@ -126,6 +151,24 @@ public class AccountMapper implements AccountMapperInterface {
 
         }
         return returnInt;
+    }
+
+    @Override
+    public void addFunds(int accountid, int funds) {
+
+        String sql = "UPDATE accounts SET balance = balance + ? WHERE ID = ?;";
+        try {
+
+            Connection conn = DB.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, "" + funds );
+            pstmt.setString(2, "" + accountid);
+            pstmt.executeUpdate();
+
+        } catch (SQLException ex) {
+            System.out.println("AccountMapper - Addfunds" + ex.getMessage());
+
+        }
     }
 
 }

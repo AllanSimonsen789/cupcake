@@ -10,6 +10,7 @@ package model;
  * @author allan
  */
 public class OrderLine {
+
     private int invoiceID;
     private int topID;
     private int bottomID;
@@ -28,6 +29,10 @@ public class OrderLine {
         this.qty = qty;
     }
 
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
     public int getInvoiceID() {
         return invoiceID;
     }
@@ -43,6 +48,5 @@ public class OrderLine {
     public int getQty() {
         return qty;
     }
-    
-    
+
 }

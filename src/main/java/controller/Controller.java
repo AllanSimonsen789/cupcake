@@ -12,6 +12,7 @@ import datasource.DataSourceFacadeInterface;
 import java.util.ArrayList;
 import model.Account;
 import model.Bottom;
+import model.Invoice;
 import model.Top;
 
 /**
@@ -37,5 +38,17 @@ public class Controller {
     
     public ArrayList<Bottom> getAllBottoms() {
         return DSfacade.getAllBottoms();
+    }
+
+    public ArrayList<Invoice> getAllInvoices() {
+        return DSfacade.getAllInvoices();
+    }
+
+    public ArrayList<Account> getAllAccounts() {
+        return DSfacade.getAllAccounts();
+    }
+
+    public void addFunds(int accountid, int funds) {
+        DSfacade.addFunds(accountid, funds);
     }
 }
