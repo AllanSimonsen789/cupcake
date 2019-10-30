@@ -21,6 +21,8 @@ public interface InvoiceMapperInterface {
     public Invoice getInvoiceFromID(int id);
     
     public ArrayList<Invoice> getAllInvoices();
+
+    public ArrayList<Invoice> getInvoicesWithCustomerID(int customerID);
     
     
 

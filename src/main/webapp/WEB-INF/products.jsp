@@ -24,6 +24,10 @@
     <body>
         <h1>CUPCAKE SHOP!</h1>
         <h2>Velkommen <%=account.getName()%></h2>
+        <form name="logout" action="FrontController" method="POST">
+            <input type ="hidden" name="command" value="logout">
+            <input type="submit" value="Log Out" />
+        </form><br>
         <form name="CustomerPage" action="FrontController">
             <input type="hidden" value="CustomerPage"  name="command"/>
             <input type="submit" value="My Profile"  name="profile"/>

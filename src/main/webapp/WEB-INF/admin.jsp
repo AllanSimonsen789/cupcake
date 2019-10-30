@@ -19,6 +19,10 @@
     </head>
     <body>
         <h1>ADMIN</h1><br>
+        <form name="logout" action="FrontController" method="POST">
+            <input type ="hidden" name="command" value="logout">
+            <input type="submit" value="Log Out" />
+        </form>
         <h2>Customer List</h2>
         <table>
             <tr>
