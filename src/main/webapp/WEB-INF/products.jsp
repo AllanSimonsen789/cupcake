@@ -62,7 +62,7 @@
                     </table>
                 </div>
                 <input type="number" name="qty" value="" placeholder="antal" min="1" max="100" />
-                <input type="submit" value="Køb" />
+                <input type="submit" value="Læg i kurv" />
             </form>
     </body>
 </html>
