@@ -23,7 +23,8 @@ public class PurchaseConfirmationPageCommand extends Command {
         if (((Account) session.getAttribute("account")).getBalance() >= Double.parseDouble(request.getParameter("totalprice"))) {
             controller.removeFunds(((Account) session.getAttribute("account")).getID(), Double.parseDouble(request.getParameter("totalprice")));
             controller.makeInvoice(((Account) session.getAttribute("account")).getID(), Double.parseDouble(request.getParameter("totalprice")), Timestamp.valueOf(LocalDateTime.now()), (ArrayList<OrderLine>) session.getAttribute("shoppingcart"));
-            session.setAttribute("account", controller.getAccountWithID(((Account)session.getAttribute("account")).getID()));
+            session.setAttribute("account", controller.getAccountWithID(((Account)session.getAttribute("account")).getID()git status
+                    ));
             return "purchaseConfirmation";
         } else {
             session.removeAttribute("shoppingcart");
