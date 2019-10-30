@@ -30,6 +30,11 @@ public abstract class Command {
         commandList.put("addproduct", new AddProductCommand());
         commandList.put("addfunds", new AddFundsCommand());
         commandList.put("showOrder", new AdminShowOrderCommand());
+        commandList.put("shoppingCart", new ShoppingCartCommand());
+        commandList.put("ProductPage", new ProductPageCommand());
+        commandList.put("CustomerPage", new CustomerPageCommand());
+        commandList.put("InvoicePage", new InvoicePageCommand());
+
     }
 
     static Command from(HttpServletRequest request) {

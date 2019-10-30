@@ -36,7 +36,7 @@ public class AddProductCommand extends Command {
             }
         }
         if (!duplicate) {
-            shoppingCart.add(new OrderLine(bottom, top, qty));
+            shoppingCart.add(new OrderLine(top, bottom, qty));
         }
         session.setAttribute("shoppingcart", shoppingCart);
         request.setAttribute("tops", controller.getAllTops());
