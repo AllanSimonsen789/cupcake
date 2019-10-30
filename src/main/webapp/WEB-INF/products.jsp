@@ -19,7 +19,7 @@
     <head>
         <%%>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Cupcakes</title>
     </head>
     <body>
         <h1>CUPCAKE SHOP!</h1>
@@ -28,6 +28,11 @@
         <h3> Din kurv: <% if (orderlines != null) {
                 out.print(orderlines.size());
         } %></h3>
+        <form name="shoppingCart" action="FrontController" method="POST">
+                <input type="hidden" value="shoppingCart" name="command" />
+                <input type="submit" value="Kurv" name="shoppingcart" />
+        </form>
+        <br>
             <form name="addproduct" action="FrontController" method="POST">
                 <input type="hidden" value="addproduct" name="command" />
                 <div>
@@ -43,7 +48,7 @@
                             <td><%=bottom.getPrice()%></td>
                             <td><input type="radio" name="bottom" value="<%=bottom.getID()%>" /></td>
                         </tr>
-                        <% } %>
+                        <% }%>
 
                     </table>
                     <table style="float: left">

@@ -25,7 +25,7 @@ public class AddProductCommand extends Command {
         if (session.getAttribute("shoppingcart") != null) {
             shoppingCart = (ArrayList<OrderLine>) session.getAttribute("shoppingcart");
         }
-        shoppingCart.add(new OrderLine(Integer.parseInt(request.getParameter("bottom")), Integer.parseInt(request.getParameter("top")), Integer.parseInt(request.getParameter("qty"))));
+        shoppingCart.add(new OrderLine(Integer.parseInt(request.getParameter("top")), Integer.parseInt(request.getParameter("bottom")), Integer.parseInt(request.getParameter("qty"))));
         session.setAttribute("shoppingcart", shoppingCart);
         request.setAttribute("tops", controller.getAllTops());
         request.setAttribute("bottoms", controller.getAllBottoms());
