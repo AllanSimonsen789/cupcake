@@ -1,9 +1,12 @@
 <%-- 
-    Document   : shoppingCart
-    Created on : Oct 30, 2019, 9:32:37 AM
-    Author     : THOMA
+    Document   : purchaseConfirmation
+    Created on : Oct 30, 2019, 3:32:32 PM
+    Author     : Malthe
 --%>
 
+<%@page import="java.time.LocalDateTime"%>
+<%@page import="java.sql.Timestamp"%>
+<%@page import="model.Invoice"%>
 <%@page import="model.OrderLine"%>
 <%@page import="model.Top"%>
 <%@page import="model.Bottom"%>
@@ -14,27 +17,24 @@
 <% ArrayList<OrderLine> orderlines = (ArrayList<OrderLine>) session.getAttribute("shoppingcart");%>
 <% ArrayList<Bottom> bottoms = (ArrayList<Bottom>) request.getAttribute("bottoms");%>
 <% ArrayList<Top> tops = (ArrayList<Top>) request.getAttribute("tops");%>
-
+<% ArrayList<Invoice> invoices = (ArrayList<Invoice>) request.getAttribute("invoices");%>
 
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Your shopping cart</title>
+        <title>Purchase Confirmation</title>
     </head>
     <body>
-        <h1>Shopping Cart</h1>
-        <h2>Welcome <%=account.getName()%></h2>
-        <p>Balance: <%= account.getBalance()%></p>
-        <h3>Your shopping cart:</h3>
-        <% if (orderlines != null) { %>
-        <br>
+        <h1>Thank you for your purchase!</h1>
         <table style="float: left">
             <tr>
+                <th>Order ID</th>
+                <th>Name</th>
                 <th>Bottom</th>
                 <th>Top</th>
                 <th>Quantity</th>
+                <th>Ordered</th>
                 <th>Price</th>
             </tr>
             <%
@@ -44,27 +44,23 @@
                     Bottom bottom = bottoms.get(orderline.getBottomID() - 1);
                     Top top = tops.get(orderline.getTopID() - 1);
                     sum = ((bottom.getPrice() + top.getPrice()) * orderline.getQty());
-                    totalSum = sum + totalSum;
-            %>        
-            <tr>      
-                <td><%=bottoms.get(orderline.getBottomID() - 1).getName()%></td>
-                <td><%=tops.get(orderline.getTopID() - 1).getName()%></td>                
+                    totalSum = sum + totalSum; 
+            %>
+            <tr>
+                <td><%=orderline.getInvoiceID() %> </td>
+                <td><%=account.getName() %> </td>
+                <td><%=bottoms.get(orderline.getBottomID() - 1).getName()%> </td>
+                <td><%=tops.get(orderline.getTopID() - 1).getName()%></td>
                 <td><%=orderline.getQty()%></td>
-                <td><%=sum%></td>                
+                <td><%=Timestamp.valueOf(LocalDateTime.now()) %></td>
+                <td><%=sum%></td>
             </tr>
-            <% }%>
+            <% } %>
         </table>
-        <h3>Total price: <%=totalSum%></h3>
-        <% } else {%>
-        <p>Your cart is empty!</p>
-        <% }%>
-        <form name="ProductPage" action="FrontController" method="POST">
-            <input type="hidden" value="ProductPage" name="command" />
-            <input type="submit" value="Add Cupcakes" name="productpage" />
-        </form><br>
-        <form name="ConfirmationPage" action="FrontController" method="POST">
-            <input type="hidden" value="ConfirmationPage" name="command" />
-            <input type="submit" value="Place Order" name="invoicepage" />
-        </form>
+        <br>
+        <br>
+        <br>
+        <h2>Total price: <%=totalSum%></h2>
+
     </body>
 </html>

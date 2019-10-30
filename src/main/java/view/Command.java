@@ -35,6 +35,7 @@ public abstract class Command {
         commandList.put("CustomerPage", new CustomerPageCommand());
         commandList.put("InvoicePage", new InvoicePageCommand());
         commandList.put("logout", new LogOutCommand());
+        commandList.put("ConfirmationPage", new PurchaseConfirmationPageCommand());
     }
 
     static Command from(HttpServletRequest request) {
