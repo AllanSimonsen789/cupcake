@@ -9,10 +9,12 @@ import Exceptions.LoginException;
 import Exceptions.ShopException;
 import datasource.DataSourceFacade;
 import datasource.DataSourceFacadeInterface;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import model.Account;
 import model.Bottom;
 import model.Invoice;
+import model.OrderLine;
 import model.Top;
 
 /**
@@ -58,5 +60,17 @@ public class Controller {
 
     public Invoice getInvoiceFromId(int invoiceid) {
         return DSfacade.getAllInvoiceWithID(invoiceid);
+    }
+
+    public void makeInvoice(int id, double price, Timestamp time, ArrayList<OrderLine> orderLines) {
+        DSfacade.makeInvoice(new Invoice(id,price,time,orderLines));
+    }
+
+    public void removeFunds(int id, double invoiceprice) {
+        DSfacade.removeFunds(id,invoiceprice);
+    }
+
+    public Account getAccountWithID(int id) {
+        return DSfacade.getAccountWithID(id);
     }
 }

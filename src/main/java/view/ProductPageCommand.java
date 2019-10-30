@@ -7,6 +7,7 @@ package view;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -16,10 +17,10 @@ public class ProductPageCommand extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) {
-        
+        HttpSession session = request.getSession();
         request.setAttribute("tops", controller.getAllTops());
         request.setAttribute("bottoms", controller.getAllBottoms());
-        request.removeAttribute("shoppingcart");
+        session.removeAttribute("shoppingcart");
         return "products";
     }
     

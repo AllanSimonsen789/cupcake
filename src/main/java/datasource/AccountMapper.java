@@ -171,4 +171,22 @@ public class AccountMapper implements AccountMapperInterface {
         }
     }
 
+    @Override
+    public void removeFunds(int id, double invoiceprice) {
+
+        String sql = "UPDATE accounts SET balance = balance - ? WHERE ID = ?;";
+        try {
+
+            Connection conn = DB.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, "" + invoiceprice );
+            pstmt.setString(2, "" + id);
+            pstmt.executeUpdate();
+
+        } catch (SQLException ex) {
+            System.out.println("AccountMapper - Addfunds" + ex.getMessage());
+
+        }
+    }
+
 }

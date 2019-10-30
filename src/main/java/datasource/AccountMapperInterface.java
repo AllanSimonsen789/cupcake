@@ -26,5 +26,7 @@ public interface AccountMapperInterface {
     public ArrayList<Account> getAllAccounts();
 
     public void addFunds(int accountid, int funds);
+
+    public void removeFunds(int id, double invoiceprice);
        
 }

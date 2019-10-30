@@ -35,4 +35,10 @@ public interface DataSourceFacadeInterface {
     public ArrayList<Invoice> getInvoiceWithCustomerID(int customerID);
 
     public Invoice getAllInvoiceWithID(int invoiceid);
+
+    public void makeInvoice(Invoice invoice);
+
+    public void removeFunds(int id, double invoiceprice);
+
+    public Account getAccountWithID(int id);
 }

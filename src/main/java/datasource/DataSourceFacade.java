@@ -67,4 +67,19 @@ public class DataSourceFacade implements DataSourceFacadeInterface {
     public Invoice getAllInvoiceWithID(int invoiceid) {
         return im.getInvoiceFromID(invoiceid);
     }
+
+    @Override
+    public void makeInvoice(Invoice invoice) {
+        im.makeInvoice(invoice);
+    }
+
+    @Override
+    public void removeFunds(int id, double invoiceprice) {
+        am.removeFunds(id, invoiceprice);
+    }
+
+    @Override
+    public Account getAccountWithID(int id) {
+        return am.getAccount(id);
+    }
 }

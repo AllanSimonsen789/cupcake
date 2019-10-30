@@ -28,6 +28,13 @@ public class Invoice {
         this.orderlines = orderlines;
     }
 
+    public Invoice(int CustomerID, double price, Timestamp time, ArrayList<OrderLine> orderlines) {
+        this.CustomerID = CustomerID;
+        this.price = price;
+        this.time = time;
+        this.orderlines = orderlines;
+    }
+
     public int getID() {
         return ID;
     }

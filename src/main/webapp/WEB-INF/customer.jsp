@@ -22,7 +22,11 @@
         <form name="logout" action="FrontController" method="POST">
             <input type ="hidden" name="command" value="logout">
             <input type="submit" value="Log Out" />
-        </form>
+        </form><br>
+        <form name="ProductPage" action="FrontController" method="POST">
+            <input type="hidden" value="ProductPage" name="command" />
+            <input type="submit" value="Go back to shop" name="productpage" />
+        </form><br>
         <h2>Name: <%=account.getName()%></h2>
         <h3>Email: <%=account.getEmail()%></h3>
         <h3>Phone: +45<%=account.getPhone()%></h3>

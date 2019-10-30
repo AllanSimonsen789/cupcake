@@ -14,6 +14,8 @@
 <% ArrayList<OrderLine> orderlines = (ArrayList<OrderLine>) session.getAttribute("shoppingcart");%>
 <% ArrayList<Bottom> bottoms = (ArrayList<Bottom>) request.getAttribute("bottoms");%>
 <% ArrayList<Top> tops = (ArrayList<Top>) request.getAttribute("tops");%>
+<%double totalSum = 0;%>
+
 
 
 <!DOCTYPE html>
@@ -39,7 +41,6 @@
             </tr>
             <%
                 double sum = 0;
-                double totalSum = 0;
                 for (OrderLine orderline : orderlines) {
                     Bottom bottom = bottoms.get(orderline.getBottomID() - 1);
                     Top top = tops.get(orderline.getTopID() - 1);
@@ -64,6 +65,7 @@
         </form><br>
         <form name="ConfirmationPage" action="FrontController" method="POST">
             <input type="hidden" value="ConfirmationPage" name="command" />
+            <input type="hidden" value="<%=totalSum%>" name="totalprice" />
             <input type="submit" value="Place Order" name="invoicepage" />
         </form>
     </body>
