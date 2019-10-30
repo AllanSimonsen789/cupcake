@@ -13,7 +13,7 @@ public class PurchaseConfirmationPageCommand extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) {
         request.setAttribute("tops", controller.getAllTops());
         request.setAttribute("bottoms", controller.getAllBottoms());
-        
+        request.removeAttribute("shoppingcart");
         return "purchaseConfirmation";
     }
     

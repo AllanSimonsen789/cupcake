@@ -61,6 +61,9 @@
         <br>
         <br>
         <h2>Total price: <%=totalSum%></h2>
-
+        <form name="ProductPage" action="FrontController" method="POST">
+            <input type="hidden" value="ProductPage" name="command" />
+            <input type="submit" value="Back to Cupcakes" name="productpage" />
+        </form><br>
     </body>
 </html>

@@ -19,7 +19,7 @@ public class ProductPageCommand extends Command {
         
         request.setAttribute("tops", controller.getAllTops());
         request.setAttribute("bottoms", controller.getAllBottoms());
-        
+        request.removeAttribute("shoppingcart");
         return "products";
     }
     
