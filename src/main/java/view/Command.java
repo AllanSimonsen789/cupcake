@@ -34,6 +34,7 @@ public abstract class Command {
         commandList.put("ProductPage", new ProductPageCommand());
         commandList.put("CustomerPage", new CustomerPageCommand());
         commandList.put("InvoicePage", new InvoicePageCommand());
+        commandList.put("ConfirmationPage", new PurchaseConfirmationPageCommand());
 
     }
 

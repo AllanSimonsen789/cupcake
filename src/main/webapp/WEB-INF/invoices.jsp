@@ -26,9 +26,6 @@
                     <th>Quantity</th>
                     <th>Ordered</th>
                     <th>Price</th>
-                    <%
-                        
-                    %>
                     <tr>
             </table>
         </div>
