@@ -21,11 +21,13 @@ public class PurchaseConfirmationPageCommand extends Command {
         request.setAttribute("tops", controller.getAllTops());
         request.setAttribute("bottoms", controller.getAllBottoms());
         ArrayList<OrderLine> orderlines = (ArrayList<OrderLine>) session.getAttribute("shoppingcart");
-        if ( orderlines != null && orderlines.size() > 0 &&((Account) session.getAttribute("account")).getBalance() >= Double.parseDouble(request.getParameter("totalprice"))) {
-            controller.removeFunds(((Account) session.getAttribute("account")).getID(), Double.parseDouble(request.getParameter("totalprice")));
-            controller.makeInvoice(((Account) session.getAttribute("account")).getID(), Double.parseDouble(request.getParameter("totalprice")), Timestamp.valueOf(LocalDateTime.now()), (ArrayList<OrderLine>) session.getAttribute("shoppingcart"));
+        Account account = (Account) session.getAttribute("account");
+        Double totalprice = Double.parseDouble(request.getParameter("totalprice"));
+        if ( orderlines != null && orderlines.size() > 0 && account.getBalance() >=  totalprice) {
+            controller.removeFunds(account.getID(), totalprice);
+            controller.makeInvoice(account.getID(), totalprice, Timestamp.valueOf(LocalDateTime.now()), orderlines);
             request.setAttribute("id", controller.getHighestInvoiceId());
-            session.setAttribute("account", controller.getAccountWithID(((Account) session.getAttribute("account")).getID()));
+            session.setAttribute("account", controller.getAccountWithID(account.getID()));
             return "purchaseConfirmation";
         } else {
             session.removeAttribute("shoppingcart");
