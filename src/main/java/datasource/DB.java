@@ -20,7 +20,7 @@ public class DB {
         Connection conn = null;
         try {
 
-            InputStream prob = DB.class.getResourceAsStream("/db.properties");
+            InputStream prob = DB.class.getResourceAsStream("/livedb.properties");
             Properties pros = new Properties();
             pros.load(prob);
 
