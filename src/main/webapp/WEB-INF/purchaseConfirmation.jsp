@@ -18,7 +18,7 @@
 <% ArrayList<Bottom> bottoms = (ArrayList<Bottom>) request.getAttribute("bottoms");%>
 <% ArrayList<Top> tops = (ArrayList<Top>) request.getAttribute("tops");%>
 <% ArrayList<Invoice> invoices = (ArrayList<Invoice>) request.getAttribute("invoices");%>
-
+<% int id = (int)request.getAttribute("id"); %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,7 +47,7 @@
                     totalSum = sum + totalSum;
             %>
             <tr>
-                <td><%=orderline.getInvoiceID()%> </td>
+                <td><%=id %> </td>
                 <td><%=account.getName()%> </td>
                 <td><%=bottoms.get(orderline.getBottomID() - 1).getName()%> </td>
                 <td><%=tops.get(orderline.getTopID() - 1).getName()%></td>
