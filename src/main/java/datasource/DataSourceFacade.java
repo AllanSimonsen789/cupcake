@@ -82,4 +82,9 @@ public class DataSourceFacade implements DataSourceFacadeInterface {
     public Account getAccountWithID(int id) {
         return am.getAccount(id);
     }
+
+    @Override
+    public int getHighestID() {
+        return im.getHighestID();
+    }
 }

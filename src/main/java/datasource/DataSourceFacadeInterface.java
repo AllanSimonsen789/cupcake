@@ -41,4 +41,6 @@ public interface DataSourceFacadeInterface {
     public void removeFunds(int id, double invoiceprice);
 
     public Account getAccountWithID(int id);
+
+    public int getHighestID();
 }

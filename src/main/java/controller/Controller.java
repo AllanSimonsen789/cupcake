@@ -63,6 +63,10 @@ public class Controller {
     public Invoice getInvoiceFromId(int invoiceid) {
         return DSfacade.getAllInvoiceWithID(invoiceid);
     }
+    
+    public int getHighestInvoiceId() {
+        return DSfacade.getHighestID();
+    }
 
     public void makeInvoice(int id, double price, Timestamp time, ArrayList<OrderLine> orderLines) {
         DSfacade.makeInvoice(new Invoice(id, price, time, orderLines));
