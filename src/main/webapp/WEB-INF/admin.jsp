@@ -88,46 +88,46 @@
         </tr>
         <% }%>
     </table>
-    <c-rt:set var="invoiceid" value="${requestScope.invoiceid}" scope="request" />
-    <c:if test="${not empty invoiceid}">
-        <c:set var="invoice" value="${requestScope.invoices[invoiceid-1]}" scope="request" />
-        <c:set var="customer" value="${requestScope.customers[invoice.getCustomerID()-2]}" scope="request" />
-        <c:set var="bottoms" value="${requestScope.bottoms}" scope="request" />
-        <c:set var="tops" value="${requestScope.tops}" scope="request" />
+<c-rt:set var="invoiceid" value="${requestScope.invoiceid}" scope="request" />
+<c:if test="${not empty invoiceid}">
+    <c:set var="invoice" value="${requestScope.invoices[invoiceid-1]}" scope="request" />
+    <c:set var="customer" value="${requestScope.customers[invoice.getCustomerID()-2]}" scope="request" />
+    <c:set var="bottoms" value="${requestScope.bottoms}" scope="request" />
+    <c:set var="tops" value="${requestScope.tops}" scope="request" />
 
-        
-        <h2>Invoice: #<c:out value='${invoice.getID()}' /></h2>
-        <h3>Total Price: $<c:out value='${invoice.getPrice()}' /></h3>
-        <h3>Order Time: <c:out value='${invoice.getTime().toString()}' /></h3>
-        <h3>Customer ID: #<c:out value='${customer.getID()}' /></h3>
-        <h3>Customer Name: <c:out value='${customer.getName()}' /></h3>
-        <h3>Customer Phone: +45<c:out value='${customer.getPhone()}' /></h3>
-        <h3>Customer Email: <c:out value='${customer.getEmail()}' /></h3>
-        <table>
-            <tr>
-                <th>Bottom</th>
-                <th>Top</th>
-                <th>Quatity</th>
-                <th>price</th>
-            </tr>
+
+    <h2>Invoice: #<c:out value='${invoice.getID()}' /></h2>
+    <h3>Total Price: $<c:out value='${invoice.getPrice()}' /></h3>
+    <h3>Order Time: <c:out value='${invoice.getTime().toString()}' /></h3>
+    <h3>Customer ID: #<c:out value='${customer.getID()}' /></h3>
+    <h3>Customer Name: <c:out value='${customer.getName()}' /></h3>
+    <h3>Customer Phone: +45<c:out value='${customer.getPhone()}' /></h3>
+    <h3>Customer Email: <c:out value='${customer.getEmail()}' /></h3>
+    <table>
+        <tr>
+            <th>Bottom</th>
+            <th>Top</th>
+            <th>Quatity</th>
+            <th>price</th>
+        </tr>
         <c:forEach var="orderline" items="${invoice.getOrderlines()}">
-                <tr>
-                    <td>
-                        <c:out value="${bottoms[orderline.getBottomID() - 1].getName()}" />
-                    </td>
-                    <td>
-                        <c:out value="${tops[orderline.getTopID() - 1].getName()}" />
-                    </td>
-                    <td>
-                        <c:out value="${orderline.getQty()}" />
-                    </td>
-                    <td>
-                        <c:out value="${(bottoms[orderline.getBottomID() - 1].getPrice() + tops[orderline.getTopID() - 1].getPrice())*orderline.getQty()}" />
-                    </td>
-                </tr>
-            </c:forEach>
-        </table>
-    </c:if>
-    <h2>
+            <tr>
+                <td>
+                    <c:out value="${bottoms[orderline.getBottomID() - 1].getName()}" />
+                </td>
+                <td>
+                    <c:out value="${tops[orderline.getTopID() - 1].getName()}" />
+                </td>
+                <td>
+                    <c:out value="${orderline.getQty()}" />
+                </td>
+                <td>
+                    <c:out value="${(bottoms[orderline.getBottomID() - 1].getPrice() + tops[orderline.getTopID() - 1].getPrice())*orderline.getQty()}" />
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
+</c:if>
+<h2>
 </body>
 </html>

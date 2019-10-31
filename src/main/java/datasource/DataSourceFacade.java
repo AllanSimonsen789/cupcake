@@ -32,14 +32,14 @@ public class DataSourceFacade implements DataSourceFacadeInterface {
         am.createAccount(account);
         return am.getAccount(am.getHighestAccountID());
     }
-    
+
     @Override
-    public ArrayList<Top> getAllTops(){
+    public ArrayList<Top> getAllTops() {
         return cm.getTops();
     }
-    
+
     @Override
-    public ArrayList<Bottom> getAllBottoms(){
+    public ArrayList<Bottom> getAllBottoms() {
         return cm.getBottoms();
     }
 
@@ -49,7 +49,7 @@ public class DataSourceFacade implements DataSourceFacadeInterface {
     }
 
     @Override
-    public ArrayList<Account> getAllAccounts(){
+    public ArrayList<Account> getAllAccounts() {
         return am.getAllAccounts();
     }
 

@@ -13,18 +13,15 @@ import model.Invoice;
  * @author allan
  */
 public interface InvoiceMapperInterface {
-    
+
     public void makeInvoice(Invoice invoice);
-    
+
     public int getHighestID();
-    
+
     public Invoice getInvoiceFromID(int id);
-    
+
     public ArrayList<Invoice> getAllInvoices();
 
     public ArrayList<Invoice> getInvoicesWithCustomerID(int customerID);
-    
-    
 
-    
 }

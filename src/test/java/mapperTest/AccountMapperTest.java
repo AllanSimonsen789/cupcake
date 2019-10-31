@@ -23,14 +23,15 @@ import static org.junit.Assert.*;
 // Re-run SQL script before testing!
 // Re-run SQL script before testing!
 public class AccountMapperTest {
-        private final datasource.AccountMapper am = new AccountMapper();
-    
+
+    private final datasource.AccountMapper am = new AccountMapper();
+
     @Test
     public void getAccountTest() {
         Account account = am.getAccount(4);
         assertEquals(4, account.getID());
     }
-    
+
     @Test
     public void loginTest() throws LoginException {
         Account account = am.login("admin@cupcake.dk", "admin123");
@@ -42,12 +43,12 @@ public class AccountMapperTest {
         assertEquals("Admin", account.getRole());
         assertNotEquals(1, account.getBalance());
     }
-    
+
     @Test
     public void createAccountTest() throws LoginException {
         model.Account account = new Account("Arthur Fleck", 66666666, "joker@hotmail.com", "wanttohearajoke+", "customer", 0.00);
         am.createAccount(account);
         assertEquals(11, am.getHighestAccountID());
     }
-    
+
 }

@@ -14,6 +14,5 @@ public class InvoiceMapperException extends Exception {
     public InvoiceMapperException(String message) {
         super(message);
     }
-    
-    
+
 }

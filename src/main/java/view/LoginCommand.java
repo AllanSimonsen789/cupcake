@@ -33,7 +33,7 @@ public class LoginCommand extends Command {
                     request.setAttribute("invoices", controller.getAllInvoices());
                     request.setAttribute("customers", controller.getAllAccounts());
                     return "admin";
-                }else if (account.getRole().equals("customer")) {
+                } else if (account.getRole().equals("customer")) {
                     request.setAttribute("tops", controller.getAllTops());
                     request.setAttribute("bottoms", controller.getAllBottoms());
                     return "products";

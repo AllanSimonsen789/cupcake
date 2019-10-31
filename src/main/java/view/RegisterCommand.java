@@ -23,7 +23,7 @@ public class RegisterCommand extends Command {
             String password1 = request.getParameter("password1");
             String password2 = request.getParameter("password2");
             if (password1.equals(password2)) {
-                Account account = controller.register(request.getParameter("name"),request.getParameter("phone"),request.getParameter("email"), password2);
+                Account account = controller.register(request.getParameter("name"), request.getParameter("phone"), request.getParameter("email"), password2);
                 HttpSession session = request.getSession();
                 session.setAttribute("account", account);
                 session.setAttribute("role", account.getRole());

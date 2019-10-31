@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author allan
  */
 public abstract class Command {
-    
+
     private static HashMap<String, Command> commandList;
     protected Controller controller = new Controller();
 

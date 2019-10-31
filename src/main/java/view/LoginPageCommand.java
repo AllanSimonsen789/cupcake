@@ -16,7 +16,7 @@ public class LoginPageCommand extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) {
-        return "login";    
+        return "login";
     }
-    
+
 }

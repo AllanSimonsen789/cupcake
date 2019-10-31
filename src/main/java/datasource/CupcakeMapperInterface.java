@@ -14,20 +14,13 @@ import model.Top;
  * @author THOMA
  */
 public interface CupcakeMapperInterface {
-    
-    
-    
-    public ArrayList <Bottom> getBottoms();
-    
-    public ArrayList <Top> getTops();
-    
-    public Bottom getBottomFromID (int ID);
-    
-    public Top getTopFromID (int ID);
-    
-    
-    
-    
-    
-    
+
+    public ArrayList<Bottom> getBottoms();
+
+    public ArrayList<Top> getTops();
+
+    public Bottom getBottomFromID(int ID);
+
+    public Top getTopFromID(int ID);
+
 }

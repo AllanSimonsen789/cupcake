@@ -27,7 +27,7 @@
     </head>
     <body>
         <h1>Shopping Cart</h1>
-        <h2>Welcome <%=account.getName()%></h2>
+        <h2><%=account.getName()%>'s Cart</h2>
         <p>Balance: <%= account.getBalance()%></p>
         <h3>Your shopping cart:</h3>
         <% if (orderlines != null) { %>

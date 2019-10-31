@@ -44,18 +44,18 @@
                     Bottom bottom = bottoms.get(orderline.getBottomID() - 1);
                     Top top = tops.get(orderline.getTopID() - 1);
                     sum = ((bottom.getPrice() + top.getPrice()) * orderline.getQty());
-                    totalSum = sum + totalSum; 
+                    totalSum = sum + totalSum;
             %>
             <tr>
-                <td><%=orderline.getInvoiceID() %> </td>
-                <td><%=account.getName() %> </td>
+                <td><%=orderline.getInvoiceID()%> </td>
+                <td><%=account.getName()%> </td>
                 <td><%=bottoms.get(orderline.getBottomID() - 1).getName()%> </td>
                 <td><%=tops.get(orderline.getTopID() - 1).getName()%></td>
                 <td><%=orderline.getQty()%></td>
-                <td><%=Timestamp.valueOf(LocalDateTime.now()) %></td>
+                <td><%=Timestamp.valueOf(LocalDateTime.now())%></td>
                 <td><%=sum%></td>
             </tr>
-            <% } %>
+            <% }%>
         </table>
         <br>
         <br>

@@ -21,130 +21,113 @@ import model.Top;
  */
 public class CupcakeMapper implements CupcakeMapperInterface {
 
-    
-    
-
     @Override
     public Bottom getBottomFromID(int ID) {
-        
+
         String sql = "SELECT * FROM cupcakes.bottoms WHERE ID = ?;";
-        
+
         Bottom bottom = null;
-        
-        try{
+
+        try {
             Connection conn = DB.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, ID);
             ResultSet res = pstmt.executeQuery();
-            
-            if(res == null){
+
+            if (res == null) {
                 return null;
-            }
-            else{
+            } else {
                 res.next();
                 bottom = new Bottom(res.getInt("ID"), res.getString("name"), res.getDouble("price"));
             }
-                    
+
         } catch (SQLException ex) {
             Logger.getLogger(CupcakeMapper.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return bottom;
-        
+
     }
 
     @Override
     public Top getTopFromID(int ID) {
-    
-    String sql = "SELECT * FROM cupcakes.tops WHERE ID = ?;";
-        
+
+        String sql = "SELECT * FROM cupcakes.tops WHERE ID = ?;";
+
         Top top = null;
-        
-        try{
+
+        try {
             Connection conn = DB.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, ID);
             ResultSet res = pstmt.executeQuery();
-            
-            if(res == null){
+
+            if (res == null) {
                 return null;
-            }
-            else{
+            } else {
                 res.next();
                 top = new Top(res.getInt("ID"), res.getString("name"), res.getDouble("price"));
             }
-                    
-                    } catch (SQLException ex) {
+
+        } catch (SQLException ex) {
             Logger.getLogger(CupcakeMapper.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return top;
-        
+
     }
 
     @Override
     public ArrayList<Bottom> getBottoms() {
-        
+
         String sql = "SELECT * FROM cupcakes.bottoms;";
-        ArrayList <Bottom> bottomList = new ArrayList<>();
-        
+        ArrayList<Bottom> bottomList = new ArrayList<>();
+
         try {
             Connection conn = DB.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);
             ResultSet res = pstmt.executeQuery();
-        
-            if(res == null){
+
+            if (res == null) {
                 return null;
-            }
-            else{
-                while(res.next()){
-                    bottomList.add(new Bottom(res.getInt("ID"),res.getString("name"), res.getDouble("price")));
+            } else {
+                while (res.next()) {
+                    bottomList.add(new Bottom(res.getInt("ID"), res.getString("name"), res.getDouble("price")));
                 }
             }
-        
-        
-        
+
         } catch (SQLException ex) {
             Logger.getLogger(CupcakeMapper.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
         return bottomList;
     }
 
     @Override
     public ArrayList<Top> getTops() {
-        
+
         String sql = "SELECT * FROM cupcakes.tops;";
-        ArrayList <Top> topList = new ArrayList<>();
-        
+        ArrayList<Top> topList = new ArrayList<>();
+
         try {
             Connection conn = DB.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);
             ResultSet res = pstmt.executeQuery();
-        
-            if(res == null){
+
+            if (res == null) {
                 return null;
-            }
-            else{
-                while(res.next()){
-                    topList.add(new Top(res.getInt("ID"),res.getString("name"), res.getDouble("price")));
+            } else {
+                while (res.next()) {
+                    topList.add(new Top(res.getInt("ID"), res.getString("name"), res.getDouble("price")));
                 }
             }
-        
-        
-        
+
         } catch (SQLException ex) {
             Logger.getLogger(CupcakeMapper.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
         return topList;
-    
-    
-    
+
     }
 
-    
-    
 }

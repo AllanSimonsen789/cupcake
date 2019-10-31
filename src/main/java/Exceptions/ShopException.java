@@ -9,8 +9,9 @@ package Exceptions;
  *
  * @author allan
  */
-public class ShopException extends Exception{
-        public ShopException(String msg) {
+public class ShopException extends Exception {
+
+    public ShopException(String msg) {
         super(msg);
     }
 }

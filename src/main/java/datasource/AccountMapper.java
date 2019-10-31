@@ -161,7 +161,7 @@ public class AccountMapper implements AccountMapperInterface {
 
             Connection conn = DB.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, "" + funds );
+            pstmt.setString(1, "" + funds);
             pstmt.setString(2, "" + accountid);
             pstmt.executeUpdate();
 
@@ -179,7 +179,7 @@ public class AccountMapper implements AccountMapperInterface {
 
             Connection conn = DB.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, "" + invoiceprice );
+            pstmt.setString(1, "" + invoiceprice);
             pstmt.setString(2, "" + id);
             pstmt.executeUpdate();
 

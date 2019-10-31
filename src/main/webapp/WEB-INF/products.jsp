@@ -23,7 +23,7 @@
     </head>
     <body>
         <h1>CUPCAKE SHOP!</h1>
-        <h2>Velkommen <%=account.getName()%></h2>
+        <h2>Welcome <%=account.getName()%></h2>
         <form name="logout" action="FrontController" method="POST">
             <input type ="hidden" name="command" value="logout">
             <input type="submit" value="Log Out" />
@@ -32,13 +32,13 @@
             <input type="hidden" value="CustomerPage"  name="command"/>
             <input type="submit" value="My Profile"  name="profile"/>
         </form>
-        <h3>Din Balance er: <%= account.getBalance()%></h3>
+        <h3>Your balance: <%= account.getBalance()%></h3>
         <form name="shoppingCart" action="FrontController" method="POST">
             <input type="hidden" value="shoppingCart" name="command" />
-            <input type="submit" value="Kurv" name="shoppingcart" />
+            <input type="submit" value="Shopping Cart" name="shoppingcart" />
         </form>
         <br>
-        <h3> Din kurv: <% if (orderlines != null) {
+        <h3> Your cart: <% if (orderlines != null) {
                 out.print(orderlines.size());
             } %></h3>
         <form name="addproduct" action="FrontController" method="POST">
@@ -46,9 +46,9 @@
             <div>
                 <table style="float: left">
                     <tr>
-                        <th>Bund</th>
-                        <th>Pris</th>
-                        <th>Vælg</th>
+                        <th>Bottom</th>
+                        <th>$</th>
+                        <th>Choose</th>
                     </tr>
                     <% for (Bottom bottom : bottoms) {%>
                     <tr>      
@@ -62,8 +62,8 @@
                 <table style="float: left">
                     <tr>
                         <th>Top</th>
-                        <th>Pris</th>
-                        <th>Vælg</th>
+                        <th>$</th>
+                        <th>Choose</th>
                     </tr>
                     <% for (Top top : tops) {%>
                     <tr>      
@@ -74,8 +74,8 @@
                     <% }%>
                 </table>
             </div>
-            <input type="number" name="qty" value="" placeholder="antal" min="1" max="100" />
-            <input type="submit" value="Læg i kurv" />
+            <input type="number" name="qty" value="" placeholder="quantity" min="1" max="100" />
+            <input type="submit" value="Put in cart" />
         </form>
     </body>
 </html>

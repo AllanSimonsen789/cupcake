@@ -13,14 +13,14 @@ import javax.servlet.http.HttpSession;
  *
  * @author THOMA
  */
-public class ShoppingCartCommand extends Command{
+public class ShoppingCartCommand extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) {
         request.setAttribute("tops", controller.getAllTops());
         request.setAttribute("bottoms", controller.getAllBottoms());
-        
+
         return "shoppingCart";
     }
-    
+
 }

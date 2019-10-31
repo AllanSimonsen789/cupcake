@@ -1,4 +1,3 @@
-
 package model;
 
 /**
@@ -6,6 +5,7 @@ package model;
  * @author Malthe
  */
 public class Account {
+
     private int ID;
     private String name;
     private int phone;
@@ -93,6 +93,5 @@ public class Account {
     public String toString() {
         return "Account{" + "ID=" + ID + ", name=" + name + ", phone=" + phone + ", email=" + email + ", password=" + password + ", role=" + role + ", balance=" + balance + '}';
     }
-    
-    
+
 }

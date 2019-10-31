@@ -14,8 +14,8 @@ public class CustomerPageCommand extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
-        request.setAttribute("invoices", controller.getInvoicesWithCustomerID(((Account)session.getAttribute("account")).getID()));
+        request.setAttribute("invoices", controller.getInvoicesWithCustomerID(((Account) session.getAttribute("account")).getID()));
         return "customer";
     }
-    
+
 }

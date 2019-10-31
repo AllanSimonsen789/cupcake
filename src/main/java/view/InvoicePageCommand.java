@@ -16,5 +16,5 @@ public class InvoicePageCommand extends Command {
         request.setAttribute("bottoms", controller.getAllBottoms());
         return "invoice";
     }
-    
+
 }

@@ -13,5 +13,5 @@ public class RegisterPageCommand extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) {
         return "register";
     }
-    
+
 }

@@ -22,22 +22,24 @@ import model.Top;
  * @author allan
  */
 public class Controller {
+
     private DataSourceFacadeInterface DSfacade = new DataSourceFacade();
-    
+
     public Controller() {
     }
-    
-    public Account login(String email, String password)throws LoginException{
+
+    public Account login(String email, String password) throws LoginException {
         return DSfacade.login(email, password);
     }
-    public Account register(String name, String phone, String email, String password)throws LoginException{
-        return DSfacade.register(new Account(name, Integer.parseInt(phone), email, password, "customer" ,0.00));
+
+    public Account register(String name, String phone, String email, String password) throws LoginException {
+        return DSfacade.register(new Account(name, Integer.parseInt(phone), email, password, "customer", 0.00));
     }
-    
+
     public ArrayList<Top> getAllTops() {
         return DSfacade.getAllTops();
     }
-    
+
     public ArrayList<Bottom> getAllBottoms() {
         return DSfacade.getAllBottoms();
     }
@@ -63,11 +65,11 @@ public class Controller {
     }
 
     public void makeInvoice(int id, double price, Timestamp time, ArrayList<OrderLine> orderLines) {
-        DSfacade.makeInvoice(new Invoice(id,price,time,orderLines));
+        DSfacade.makeInvoice(new Invoice(id, price, time, orderLines));
     }
 
     public void removeFunds(int id, double invoiceprice) {
-        DSfacade.removeFunds(id,invoiceprice);
+        DSfacade.removeFunds(id, invoiceprice);
     }
 
     public Account getAccountWithID(int id) {

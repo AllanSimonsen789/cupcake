@@ -17,17 +17,17 @@ import model.Top;
  * @author allan
  */
 public interface DataSourceFacadeInterface {
-    
-    public Account login(String email, String password)throws LoginException;
-    
-    public Account register(Account account)throws LoginException;
-    
+
+    public Account login(String email, String password) throws LoginException;
+
+    public Account register(Account account) throws LoginException;
+
     public ArrayList<Top> getAllTops();
-    
+
     public ArrayList<Bottom> getAllBottoms();
 
     public ArrayList<Invoice> getAllInvoices();
-    
+
     public ArrayList<Account> getAllAccounts();
 
     public void addFunds(int accountid, int funds);

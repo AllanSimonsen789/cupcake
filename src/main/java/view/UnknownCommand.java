@@ -13,11 +13,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-public class UnknownCommand extends Command{
+public class UnknownCommand extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

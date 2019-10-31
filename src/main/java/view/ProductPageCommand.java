@@ -23,5 +23,5 @@ public class ProductPageCommand extends Command {
         session.removeAttribute("shoppingcart");
         return "products";
     }
-    
+
 }

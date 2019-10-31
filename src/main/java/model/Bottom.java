@@ -10,7 +10,7 @@ package model;
  * @author THOMA
  */
 public class Bottom {
-    
+
     private int ID;
     private String name;
     private double price;
@@ -20,7 +20,6 @@ public class Bottom {
         this.name = name;
         this.price = price;
     }
-
 
     public int getID() {
         return ID;
@@ -45,7 +44,5 @@ public class Bottom {
     public void setPrice(double price) {
         this.price = price;
     }
-    
-    
-    
+
 }

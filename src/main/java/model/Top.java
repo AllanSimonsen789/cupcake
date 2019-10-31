@@ -10,7 +10,7 @@ package model;
  * @author THOMA
  */
 public class Top {
-    
+
     private int ID;
     private String name;
     private double price;
@@ -44,7 +44,5 @@ public class Top {
     public void setPrice(Double price) {
         this.price = price;
     }
-    
-    
-    
+
 }

@@ -11,7 +11,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Invoice"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%Invoice invoice = (Invoice)request.getAttribute("invoice");%>
+<%Invoice invoice = (Invoice) request.getAttribute("invoice");%>
 <% Account account = (Account) session.getAttribute("account");%>
 <% ArrayList<Bottom> bottoms = (ArrayList<Bottom>) request.getAttribute("bottoms");%>
 <% ArrayList<Top> tops = (ArrayList<Top>) request.getAttribute("tops");%>
@@ -23,7 +23,7 @@
     </head>
     <body>
         <h1>Invoice</h1>
-                <table style="float: left">
+        <table style="float: left">
             <tr>
                 <th>Order ID</th>
                 <th>Name</th>
@@ -40,18 +40,18 @@
                     Bottom bottom = bottoms.get(orderline.getBottomID() - 1);
                     Top top = tops.get(orderline.getTopID() - 1);
                     sum = ((bottom.getPrice() + top.getPrice()) * orderline.getQty());
-                    totalSum = sum + totalSum; 
+                    totalSum = sum + totalSum;
             %>
             <tr>
-                <td><%=orderline.getInvoiceID() %> </td>
-                <td><%=account.getName() %> </td>
+                <td><%=orderline.getInvoiceID()%> </td>
+                <td><%=account.getName()%> </td>
                 <td><%=bottoms.get(orderline.getBottomID() - 1).getName()%> </td>
                 <td><%=tops.get(orderline.getTopID() - 1).getName()%></td>
                 <td><%=orderline.getQty()%></td>
-                <td><%=invoice.getTime() %></td>
+                <td><%=invoice.getTime()%></td>
                 <td><%=sum%></td>
             </tr>
-            <% } %>
+            <% }%>
         </table>
         <br>
         <br>

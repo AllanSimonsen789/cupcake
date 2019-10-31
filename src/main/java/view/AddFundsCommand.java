@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author allan
  */
-public class AddFundsCommand extends Command{
+public class AddFundsCommand extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -21,5 +21,5 @@ public class AddFundsCommand extends Command{
         request.setAttribute("customers", controller.getAllAccounts());
         return "admin";
     }
-    
+
 }
