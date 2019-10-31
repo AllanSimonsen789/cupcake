@@ -12,14 +12,7 @@
         <title>Home</title>
     </head>
     <body>
-        <h1>Cupcake project</h1>
-        <h2>Group 7:</h2>
-        <ul>
-            <li>Allan</li>
-            <li>Casper</li>
-            <li>Malthe</li>
-        </ul>
-        <h1>Homepage</h1>
+        <h1>Cupcake webshop</h1>
         <form name="RegisterPage" action="FrontController" method="POST">
             <input type="hidden" value="RegisterPage" name="command" />
             <input type="submit" value="Register" name="register" />

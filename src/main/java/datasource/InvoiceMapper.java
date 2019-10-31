@@ -144,7 +144,7 @@ public class InvoiceMapper implements InvoiceMapperInterface {
                 }
             }
         } catch (SQLException ex) {
-            System.out.println("InvoiceMapper - getAllOrders" + ex.getMessage());
+            System.out.println("InvoiceMapper - getAllINvoices" + ex.getMessage());
 
         }
 
@@ -186,7 +186,7 @@ public class InvoiceMapper implements InvoiceMapperInterface {
                 }
             }
         } catch (SQLException ex) {
-            System.out.println("InvoiceMapper - getAllOrders" + ex.getMessage());
+            System.out.println("InvoiceMapper - GetAllInvoicesWithCustomerID" + ex.getMessage());
 
         }
 

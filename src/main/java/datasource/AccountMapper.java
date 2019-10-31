@@ -34,7 +34,6 @@ public class AccountMapper implements AccountMapperInterface {
                 double balance = res.getInt("balance");
                 Account user = new Account(id, name, phone, email, password, role, balance);
                 if (user == null) {
-                    System.out.println("null in accountmapper");
                 }
                 return user;
             } else {
@@ -72,7 +71,7 @@ public class AccountMapper implements AccountMapperInterface {
 
         } catch (SQLException ex) {
             if (ex.getErrorCode() == 1062) {
-                throw new LoginException("Der findes allerede en bruger med denne email addresse");
+                throw new LoginException("There already exist a user with with that email");
             } else {
                 System.out.println(ex.getMessage());
             }
@@ -184,7 +183,7 @@ public class AccountMapper implements AccountMapperInterface {
             pstmt.executeUpdate();
 
         } catch (SQLException ex) {
-            System.out.println("AccountMapper - Addfunds" + ex.getMessage());
+            System.out.println("AccountMapper - Remove Funds" + ex.getMessage());
 
         }
     }

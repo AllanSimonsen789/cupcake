@@ -54,7 +54,7 @@
                     <tr>      
                         <td><%=bottom.getName()%></td>
                         <td><%=bottom.getPrice()%></td>
-                        <td><input type="radio" name="bottom" value="<%=bottom.getID()%>" /></td>
+                        <td><input type="radio" name="bottom" value="<%=bottom.getID()%>" required /></td>
                     </tr>
                     <% }%>
 
@@ -69,12 +69,12 @@
                     <tr>      
                         <td><%=top.getName()%></td>
                         <td><%=top.getPrice()%></td>
-                        <td><input type="radio" name="top" value="<%=top.getID()%>" /></td>
+                        <td><input type="radio" name="top" value="<%=top.getID()%>" required /></td>
                     </tr>
                     <% }%>
                 </table>
             </div>
-            <input type="number" name="qty" value="" placeholder="quantity" min="1" max="100" />
+            <input type="number" name="qty" value="" placeholder="quantity" min="1" max="100" required />
             <input type="submit" value="Put in cart" />
         </form>
     </body>

@@ -24,10 +24,6 @@ public class LoginCommand extends Command {
             if (account != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("account", account);
-                if (account == null) {
-                    System.out.println("null");
-                }
-                System.out.println(account.toString());
                 session.setAttribute("role", account.getRole());
                 if (account.getRole().equals("Admin")) {
                     request.setAttribute("invoices", controller.getAllInvoices());
@@ -39,7 +35,7 @@ public class LoginCommand extends Command {
                     return "products";
                 }
             } else {
-                throw new LoginException("Email eller kodeord var forkert, prøv igen");
+                throw new LoginException("Email or password was incorrect");
             }
 
         } catch (LoginException ex) {

@@ -19,19 +19,19 @@
                     <form name="register" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="register">
                         Name:<br>
-                        <input type="text" name="name" placeholder="Name">
+                        <input type="text" name="name" placeholder="Name" required>
                         <br>
                         Phone:<br>
-                        <input type="number" name="phone" placeholder="Number" min="00000000" max="99999999">
+                        <input type="number" name="phone" placeholder="Number" min="00000000" max="99999999" required>
                         <br>
                         Email:<br>
-                        <input type="email" name="email" placeholder="someone@somewhere.com">
+                        <input type="email" name="email" placeholder="someone@somewhere.com" required>
                         <br>
                         Password:<br>
-                        <input type="password" name="password1">
+                        <input type="password" name="password1" required>
                         <br>
                         Retype Password:<br>
-                        <input type="password" name="password2" >
+                        <input type="password" name="password2" required>
                         <br>
                         <input type="submit" value="Submit">
                     </form>

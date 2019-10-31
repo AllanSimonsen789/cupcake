@@ -20,7 +20,8 @@ public class PurchaseConfirmationPageCommand extends Command {
         HttpSession session = request.getSession();
         request.setAttribute("tops", controller.getAllTops());
         request.setAttribute("bottoms", controller.getAllBottoms());
-        if (((Account) session.getAttribute("account")).getBalance() >= Double.parseDouble(request.getParameter("totalprice"))) {
+        ArrayList<OrderLine> orderlines = (ArrayList<OrderLine>) session.getAttribute("shoppingcart");
+        if ( orderlines != null && orderlines.size() > 0 &&((Account) session.getAttribute("account")).getBalance() >= Double.parseDouble(request.getParameter("totalprice"))) {
             controller.removeFunds(((Account) session.getAttribute("account")).getID(), Double.parseDouble(request.getParameter("totalprice")));
             controller.makeInvoice(((Account) session.getAttribute("account")).getID(), Double.parseDouble(request.getParameter("totalprice")), Timestamp.valueOf(LocalDateTime.now()), (ArrayList<OrderLine>) session.getAttribute("shoppingcart"));
             session.setAttribute("account", controller.getAccountWithID(((Account) session.getAttribute("account")).getID()));

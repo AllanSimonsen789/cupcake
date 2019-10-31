@@ -32,7 +32,7 @@ public class RegisterCommand extends Command {
                 } else if (account.getRole().equals("customer")) {
                     request.setAttribute("tops", controller.getAllTops());
                     request.setAttribute("bottoms", controller.getAllBottoms());
-                    return "shop";
+                    return "products";
                 }
             } else {
                 throw new LoginException("The two passwords did not match");

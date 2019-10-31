@@ -11,16 +11,17 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Malthe
+ * @author allan
  */
-public class ProductPageCommand extends Command {
+public class OrderFinalizedProductsCommand extends Command{
+   
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         request.setAttribute("tops", controller.getAllTops());
         request.setAttribute("bottoms", controller.getAllBottoms());
+        session.removeAttribute("shoppingcart");
         return "products";
     }
-
 }
